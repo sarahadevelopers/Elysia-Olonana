@@ -3,41 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Elysia Olonana — private 283 sqm residences in Kyumvi, Kithini from KSh 23 million." />
+  <meta name="description" content="Elysia Olonana — a 283 sqm private family home in Kyumvi, Kithini. Four en-suite bedrooms, staff room, laundry area, rooftop terrace space, and modern living from KSh 23M." />
   <meta name="theme-color" content="#14061f" />
-  <title>Elysia Olonana | Private Residences by Design</title>
+  <meta property="og:title" content="Elysia Olonana | 283 sqm Private Family Home" />
+  <meta property="og:description" content="A modern 283 sqm family home in Kyumvi, Kithini from KSh 23M. View details, floor plans, gallery, and book a private viewing." />
+  <meta property="og:type" content="website" />
+  <title>Elysia Olonana | 283 sqm Private Family Home</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome 6 (free) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Residence",
+    "name": "Elysia Olonana 283 sqm Residence",
+    "description": "A 283 sqm private family home in Kyumvi, Kithini with four en-suite bedrooms, staff room, laundry area, rooftop terrace space, and modern family living.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kyumvi, Kithini",
+      "addressCountry": "KE"
+    },
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 283,
+      "unitCode": "MTK"
+    },
+    "numberOfRooms": 4,
+    "offers": {
+      "@type": "Offer",
+      "price": "23000000",
+      "priceCurrency": "KES",
+      "availability": "https://schema.org/InStock"
+    },
+    "telephone": "+254722414994",
+    "email": "elysiaolonana@gmail.com"
+  }
+  </script>
 
   <style>
-    /* ========== GLOBAL & RESET ========== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --purple-deep: #14061f;
       --purple-soft: #2c1a38;
-      --purple-glass: rgba(20, 6, 31, .78);
+      --purple-glass: rgba(20, 6, 31, .86);
       --gold: #e3bc6c;
       --gold-soft: #f4dca1;
       --gold-dark: #a9792e;
       --white: #ffffff;
       --ivory: #fbf7ef;
-      --muted-light: rgba(255,255,255,.72);
-      --muted-dark: #6b6372;
+      --cream: #f5efe4;
       --ink: #1e1b24;
+      --muted-dark: #6b6372;
+      --muted-light: rgba(255,255,255,.72);
       --line-gold: rgba(227,188,108,.28);
       --line-dark: rgba(30,27,36,.1);
-      --shadow-soft: 0 24px 80px rgba(20,6,31,.16);
+      --shadow-soft: 0 24px 80px rgba(20,6,31,.14);
       --shadow-deep: 0 34px 100px rgba(0,0,0,.32);
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -45,22 +68,42 @@
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
 
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       background: var(--ivory);
       color: var(--ink);
       font-family: var(--sans);
       font-size: 14px;
-      overflow-x: hidden;
       text-rendering: geometricPrecision;
     }
 
     body.menu-open,
     body.modal-open { overflow: hidden; }
 
-    img { display: block; max-width: 100%; }
+    @media (max-width: 720px) {
+      body { padding-bottom: 92px; }
+    }
+
+    img, video, iframe, svg {
+      display: block;
+      max-width: 100%;
+    }
+
     a { color: inherit; text-decoration: none; }
-    button, input, textarea, select { font: inherit; }
+    button, input, textarea, select { font: inherit; max-width: 100%; }
+    button { cursor: pointer; }
+
+    p, li, a, span, strong, dd, dt, h1, h2, h3 {
+      overflow-wrap: anywhere;
+    }
 
     h1, h2, h3, h4, h5, h6 {
       margin: 0;
@@ -71,7 +114,8 @@
 
     h1 { font-size: clamp(30px, 4.4vw, 36px); line-height: 1.05; }
     h2 { font-size: clamp(24px, 3vw, 28px); line-height: 1.12; }
-    h3 { font-size: 24px; line-height: 1.15; }
+    h3 { font-size: 24px; line-height: 1.16; }
+    h4, h5, h6 { font-size: 22px; line-height: 1.18; }
 
     p, li {
       font-size: 14px;
@@ -82,7 +126,30 @@
     .container {
       width: var(--container);
       margin-inline: auto;
+      min-width: 0;
     }
+
+    .section {
+      padding: 72px 0;
+      overflow-x: clip;
+    }
+
+    @media (max-width: 620px) {
+      .section { padding: 54px 0; }
+      p { line-height: 1.6; }
+      h3 { font-size: 22px; }
+    }
+
+    .section.dark {
+      background: var(--purple-deep);
+      color: var(--white);
+    }
+
+    .section.dark p,
+    .section.dark li { color: var(--muted-light); }
+
+    .section.dark h2,
+    .section.dark h3 { color: var(--white); }
 
     .eyebrow {
       display: inline-flex;
@@ -102,26 +169,11 @@
       background: currentColor;
     }
 
-    .section {
-      padding: 72px 0;
-    }
-
-    .section.dark {
-      background: var(--purple-deep);
-      color: var(--white);
-    }
-
-    .section.dark p,
-    .section.dark li { color: var(--muted-light); }
-
-    .section.dark h2,
-    .section.dark h3 { color: var(--white); }
-
     .section-head {
       display: grid;
       gap: 12px;
-      max-width: 620px;
-      margin-bottom: 28px;
+      max-width: 650px;
+      margin-bottom: 34px;
     }
 
     .section-head.center {
@@ -140,13 +192,12 @@
       border: 1px solid var(--gold);
       background: transparent;
       color: var(--purple-deep);
-      text-decoration: none;
       text-transform: uppercase;
       letter-spacing: .18em;
       font-size: 11px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
     }
 
     .btn:hover {
@@ -157,6 +208,7 @@
     }
 
     .btn.light { color: var(--white); }
+
     .btn.filled {
       background: linear-gradient(135deg, var(--gold), var(--gold-soft));
       border-color: transparent;
@@ -164,13 +216,13 @@
       box-shadow: 0 16px 38px rgba(227,188,108,.2);
     }
 
-    /* Font Awesome icon sizing */
-    i, .fas, .far, .fab {
-      font-size: 18px;
-      vertical-align: middle;
+    .icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex: 0 0 auto;
     }
 
-    /* ========== PROGRESS BAR & NAVBAR ========== */
     .site-progress {
       position: fixed;
       inset: 0 auto auto 0;
@@ -181,58 +233,101 @@
       transform-origin: left;
     }
 
+    /* ===== SMART NAVBAR ===== */
     .navbar {
       position: fixed;
       inset: 0 0 auto;
       z-index: 90;
-      padding: 14px 0;
-      background: linear-gradient(180deg, rgba(20,6,31,.74), transparent);
-      transition: background .28s var(--ease), border-color .28s var(--ease), padding .28s var(--ease);
+      padding: 12px 0;
+      padding-top: calc(12px + env(safe-area-inset-top));
+      background: linear-gradient(180deg, rgba(20,6,31,.76), transparent);
       border-bottom: 1px solid transparent;
+      transform: translateY(0);
+      transition:
+        transform .32s var(--ease),
+        background .28s var(--ease),
+        border-color .28s var(--ease),
+        padding .28s var(--ease);
     }
 
     .navbar.scrolled {
-      padding: 10px 0;
+      padding: 8px 0;
+      padding-top: calc(8px + env(safe-area-inset-top));
       background: rgba(20,6,31,.9);
       backdrop-filter: blur(16px);
       border-color: var(--line-gold);
     }
 
+    .navbar.nav-hidden {
+      transform: translateY(-110%);
+    }
+
     .nav-inner {
       width: min(1220px, calc(100vw - 32px));
+      min-height: 52px;
       margin-inline: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      min-width: 0;
     }
 
     .logo-link {
       display: inline-flex;
       align-items: center;
-      width: 180px;
+      width: 138px;
+      min-width: 0;
     }
 
     .brand-logo-img {
-      width: 180px;
+      width: 138px;
+      max-height: 42px;
       height: auto;
+      object-fit: contain;
+    }
+
+    .logo-fallback {
+      width: 138px;
+      display: grid;
+      gap: 2px;
+      color: var(--white);
+    }
+
+    .logo-fallback strong {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      line-height: 1;
+      color: var(--white);
+    }
+
+    .logo-fallback span {
+      color: var(--gold);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 24px;
+      min-width: 0;
     }
 
     .nav-links a {
       position: relative;
       color: rgba(255,255,255,.78);
-      text-decoration: none;
       text-transform: uppercase;
       letter-spacing: .18em;
       font-size: 10px;
       font-weight: 600;
       transition: color .2s var(--ease);
+      white-space: nowrap;
     }
 
     .nav-links a::after {
@@ -249,9 +344,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-soft);
-    }
+    .nav-links a.active { color: var(--gold-soft); }
 
     .nav-links a:hover::after,
     .nav-links a.active::after {
@@ -261,12 +354,13 @@
 
     .menu-toggle {
       display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255,255,255,.24);
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(227,188,108,.32);
       background: rgba(255,255,255,.06);
-      color: var(--white);
-      cursor: pointer;
+      color: var(--gold-soft);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -274,8 +368,7 @@
     }
 
     .menu-toggle span {
-      display: block;
-      width: 18px;
+      width: 16px;
       height: 1px;
       background: currentColor;
       transition: transform .25s var(--ease), opacity .25s var(--ease);
@@ -289,9 +382,14 @@
       inset: 0 0 0 auto;
       width: min(380px, 88vw);
       z-index: 120;
-      background: var(--purple-deep);
+      background:
+        radial-gradient(circle at 70% 0%, rgba(227,188,108,.12), transparent 18rem),
+        var(--purple-deep);
       padding: 78px 24px 24px;
+      padding-top: calc(78px + env(safe-area-inset-top));
       box-shadow: -24px 0 80px rgba(0,0,0,.36);
+      border-left: 1px solid var(--line-gold);
+      backdrop-filter: blur(18px);
       transform: translateX(110%);
       transition: transform .35s var(--ease);
     }
@@ -300,12 +398,20 @@
 
     .mobile-panel a {
       display: block;
-      padding: 16px 0;
+      padding: 18px 0;
       color: var(--white);
-      text-decoration: none;
       font-family: var(--serif);
-      font-size: 24px;
+      font-size: 22px;
       border-bottom: 1px solid rgba(227,188,108,.18);
+    }
+
+    .mobile-panel a::after {
+      content: "→";
+      float: right;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 14px;
+      margin-top: 6px;
     }
 
     .mobile-close {
@@ -319,6 +425,7 @@
       color: var(--gold);
       font-size: 24px;
       cursor: pointer;
+      border-radius: 999px;
     }
 
     .scrim {
@@ -336,7 +443,32 @@
       pointer-events: auto;
     }
 
-    /* ========== HERO & STATS ========== */
+    @media (max-width: 960px) {
+      .nav-links,
+      .navbar .btn { display: none; }
+      .menu-toggle { display: flex; }
+    }
+
+    @media (max-width: 620px) {
+      .logo-link,
+      .brand-logo-img,
+      .logo-fallback {
+        width: 124px;
+        max-height: 38px;
+      }
+
+      .logo-fallback strong { font-size: 18px; }
+      .logo-fallback span { font-size: 7px; }
+    }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      .nav-links { gap: 16px; }
+      .logo-link,
+      .brand-logo-img,
+      .logo-fallback { width: 130px; }
+    }
+
+    /* ===== HERO ===== */
     .hero {
       min-height: 94svh;
       display: grid;
@@ -346,8 +478,9 @@
       isolation: isolate;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(20,6,31,.9), rgba(20,6,31,.62), rgba(20,6,31,.34)),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1900&q=82") center/cover no-repeat;
+        linear-gradient(180deg, rgba(20,6,31,.46), rgba(20,6,31,.94)),
+        linear-gradient(90deg, rgba(20,6,31,.92), rgba(20,6,31,.34)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=82") center/cover no-repeat;
     }
 
     .hero::before {
@@ -357,38 +490,40 @@
       z-index: -1;
       background:
         radial-gradient(circle at 22% 24%, rgba(227,188,108,.18), transparent 22rem),
-        linear-gradient(0deg, rgba(20,6,31,.92), transparent 38%);
+        linear-gradient(0deg, var(--ivory), transparent 7rem);
+      pointer-events: none;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 130px;
-      background: linear-gradient(0deg, var(--ivory), transparent);
-    }
-
-    .hero-grid {
+    .hero .container {
+      padding-top: calc(116px + env(safe-area-inset-top));
+      padding-bottom: 58px;
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 330px;
       gap: 48px;
       align-items: end;
-      padding-top: 110px;
-      position: relative;
-      z-index: 2;
     }
 
-    .hero-copy { max-width: 610px; display: grid; gap: 16px; }
-    .hero h1, .hero p { color: var(--white); }
-    .hero p { color: rgba(255,255,255,.78); max-width: 520px; }
+    .hero-copy {
+      max-width: 620px;
+      display: grid;
+      gap: 16px;
+    }
 
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .hero p { color: var(--muted-light); max-width: 560px; }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
 
     .hero-card {
-      padding: 20px;
+      padding: 22px;
       border: 1px solid var(--line-gold);
       background: rgba(255,255,255,.08);
       backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-deep);
     }
 
     .hero-card small {
@@ -407,16 +542,89 @@
       font-family: var(--serif);
       font-size: 28px;
       font-weight: 400;
-      margin-bottom: 8px;
+      line-height: 1;
+      margin-bottom: 10px;
     }
 
-    .quick-stats {
+    .hero-card span {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line-gold);
+      background: rgba(20,6,31,.58);
+      backdrop-filter: blur(14px);
+      margin-top: 16px;
+      max-width: 820px;
+    }
+
+    .trust-strip span {
+      padding: 14px 12px;
+      color: var(--gold-soft);
+      text-align: center;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      border-right: 1px solid rgba(227,188,108,.18);
+    }
+
+    .trust-strip span:last-child { border-right: 0; }
+
+    @media (max-width: 860px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-card {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: 90svh;
+        background-position: center top;
+      }
+
+      .hero .container {
+        padding-top: calc(110px + env(safe-area-inset-top));
+        padding-bottom: 46px;
+      }
+
+      .hero h1,
+      .hero p {
+        max-width: 340px;
+      }
+
+      .hero-actions .btn { width: 100%; }
+
+      .trust-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-strip span {
+        border-bottom: 1px solid rgba(227,188,108,.18);
+      }
+
+      .trust-strip span:nth-child(2) {
+        border-right: 0;
+      }
+    }
+
+    /* ===== QUICK FACTS ===== */
+    .quick-facts {
+      margin-top: -44px;
       position: relative;
-      z-index: 3;
-      margin-top: -42px;
+      z-index: 5;
     }
 
-    .stats-grid {
+    .facts-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       background: var(--white);
@@ -424,60 +632,73 @@
       border: 1px solid var(--line-gold);
     }
 
-    .stat {
-      padding: 22px;
+    .fact {
+      padding: 24px 20px;
       border-right: 1px solid var(--line-dark);
+      text-align: center;
     }
-    .stat:last-child { border-right: 0; }
 
-    .stat strong {
+    .fact:last-child { border-right: 0; }
+
+    .fact strong {
       display: block;
       font-family: var(--serif);
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 400;
       color: var(--purple-deep);
+      line-height: 1;
       margin-bottom: 8px;
     }
 
-    .stat span {
+    .fact span {
       display: block;
       color: var(--muted-dark);
       text-transform: uppercase;
-      letter-spacing: .2em;
+      letter-spacing: .18em;
       font-size: 10px;
       font-weight: 600;
     }
 
-    /* ========== INTRO CARD ========== */
-    .intro-card {
-      max-width: 780px;
-      margin-inline: auto;
-      padding: 34px;
-      background: var(--white);
-      border: 1px solid rgba(30,27,36,.08);
-      text-align: center;
-      box-shadow: 0 18px 60px rgba(20,6,31,.08);
+    @media (max-width: 760px) {
+      .facts-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .fact {
+        border-right: 1px solid var(--line-dark);
+        border-bottom: 1px solid var(--line-dark);
+      }
+
+      .fact:nth-child(2),
+      .fact:nth-child(4) {
+        border-right: 0;
+      }
+
+      .fact:nth-child(3),
+      .fact:nth-child(4) {
+        border-bottom: 0;
+      }
     }
 
-    /* ========== RESIDENCE SECTION ========== */
-    .residence-grid {
+    /* ===== INTRO / OVERVIEW ===== */
+    .overview-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 32px;
       align-items: center;
     }
 
-    .image-frame {
-      min-height: 450px;
+    .overview-image {
+      min-height: 460px;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-soft);
       background:
-        linear-gradient(0deg, rgba(20,6,31,.32), transparent),
+        linear-gradient(0deg, rgba(20,6,31,.28), transparent),
         url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=82") center/cover no-repeat;
     }
 
-    .image-frame::after {
+    .overview-image::after {
       content: "";
       position: absolute;
       inset: 14px;
@@ -485,89 +706,258 @@
       pointer-events: none;
     }
 
-    .image-badge {
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      background: rgba(20,6,31,.72);
-      backdrop-filter: blur(16px);
-      color: var(--white);
-      border-top: 1px solid var(--line-gold);
+    .overview-copy {
+      display: grid;
+      gap: 18px;
+      min-width: 0;
     }
 
-    .image-badge span {
-      color: rgba(255,255,255,.7);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: .2em;
-    }
-
-    .image-badge strong {
-      color: var(--gold-soft);
-      font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 400;
-    }
-
-    .feature-grid {
+    .mini-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin: 20px 0 22px;
+      margin-top: 4px;
     }
 
-    .feature {
+    .mini-card {
       background: var(--white);
       border: 1px solid rgba(30,27,36,.08);
       padding: 16px;
-      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 14px 40px rgba(20,6,31,.06);
+      transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
     }
 
-    .feature:hover {
+    .mini-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(20,6,31,.08);
       border-color: rgba(227,188,108,.45);
+      box-shadow: 0 18px 54px rgba(20,6,31,.1);
     }
 
-    .feature i {
+    .mini-card .icon {
       color: var(--gold);
-      font-size: 20px;
       margin-bottom: 8px;
     }
 
-    .feature strong {
+    .mini-card strong {
       display: block;
-      color: var(--ink);
+      color: var(--purple-deep);
       font-size: 13px;
       margin-bottom: 4px;
     }
 
-    .feature span {
-      display: block;
+    .mini-card span {
       color: var(--muted-dark);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
-    /* ========== INVESTMENT ========== */
-    .investment-grid {
+    @media (max-width: 860px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-image {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .mini-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== FEATURED ROUTES ===== */
+    .route-grid {
       display: grid;
-      grid-template-columns: 1fr 310px;
-      gap: 36px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .route-card {
+      position: relative;
+      min-height: 300px;
+      padding: 22px;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      background: var(--route-img) center/cover no-repeat;
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .route-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(20,6,31,.9), rgba(20,6,31,.16));
+    }
+
+    .route-card::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(227,188,108,.42);
+      pointer-events: none;
+    }
+
+    .route-card span {
+      display: block;
+      color: var(--gold-soft);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .route-card h3 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .route-card p {
+      color: rgba(255,255,255,.72);
+      margin-bottom: 16px;
+    }
+
+    .route-card .btn {
+      width: fit-content;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 900px) {
+      .route-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .route-card {
+        min-height: 260px;
+      }
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 230px 230px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--img) center/cover no-repeat;
+      cursor: pointer;
+      box-shadow: 0 18px 60px rgba(20,6,31,.08);
+      border: 1px solid rgba(227,188,108,.18);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(20,6,31,.72), transparent 60%);
+      opacity: .7;
+      transition: opacity .2s var(--ease);
+    }
+
+    .gallery-item:hover::before {
+      opacity: .9;
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 10px;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    @media (max-width: 760px) {
+      .gallery-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 82%;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+      }
+
+      .gallery-grid::-webkit-scrollbar { display: none; }
+
+      .gallery-item {
+        min-height: 360px;
+        scroll-snap-align: start;
+      }
+
+      .gallery-item:first-child {
+        grid-row: auto;
+      }
+    }
+
+    /* ===== PRICE / BUYING GUIDE ===== */
+    .buying-grid {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 34px;
       align-items: center;
     }
 
+    .buying-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .buying-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border: 1px solid rgba(227,188,108,.18);
+      background: rgba(255,255,255,.06);
+    }
+
+    .buying-point .icon {
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .buying-point strong {
+      display: block;
+      color: var(--white);
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+
+    .buying-point small {
+      color: var(--muted-light);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     .price-card {
-      padding: 24px;
+      padding: 26px;
       border: 1px solid var(--line-gold);
       background: rgba(255,255,255,.07);
       backdrop-filter: blur(18px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
     }
 
     .price-card span {
@@ -583,130 +973,76 @@
       display: block;
       color: var(--gold-soft);
       font-family: var(--serif);
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 400;
-      margin-bottom: 16px;
+      line-height: 1;
+      margin-bottom: 14px;
     }
 
-    .price-card ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 8px;
+    .price-card p {
+      margin-bottom: 18px;
     }
 
-    .price-card li {
-      position: relative;
-      padding-left: 16px;
+    @media (max-width: 860px) {
+      .buying-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .price-card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .65em;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--gold);
-    }
-
-    /* ========== LAYOUT SECTION ========== */
-    .layout-grid {
+    /* ===== JOURNAL PREVIEW ===== */
+    .journal-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 18px;
     }
 
-    .layout-card {
-      min-height: 160px;
-      padding: 20px;
+    .journal-card {
       background: var(--white);
       border: 1px solid rgba(30,27,36,.08);
-      box-shadow: 0 16px 48px rgba(20,6,31,.06);
-      display: grid;
-      align-content: start;
-      gap: 9px;
-    }
-
-    .layout-card i {
-      color: var(--gold);
-      font-size: 22px;
-    }
-
-    .layout-card strong {
-      color: var(--ink);
-      font-size: 13px;
-    }
-
-    /* ========== FINISHES ========== */
-    .finishes {
-      background:
-        radial-gradient(circle at 12% 0%, rgba(227,188,108,.12), transparent 20rem),
-        #fff;
-    }
-
-    .finish-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .finish-card {
-      min-height: 260px;
-      position: relative;
+      box-shadow: 0 18px 48px rgba(20,6,31,.08);
       overflow: hidden;
-      display: grid;
-      align-items: end;
-      padding: 18px;
-      color: var(--white);
-      isolation: isolate;
-      box-shadow: 0 18px 60px rgba(20,6,31,.12);
-      cursor: pointer;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
     }
 
-    .finish-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .journal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 68px rgba(20,6,31,.16);
+    }
+
+    .journal-img {
+      height: 210px;
       background: var(--img) center/cover no-repeat;
-      z-index: -2;
-      transition: transform .45s var(--ease);
     }
 
-    .finish-card:hover::before { transform: scale(1.06); }
-
-    .finish-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(20,6,31,.88), rgba(20,6,31,.18));
-      z-index: -1;
+    .journal-content {
+      padding: 20px;
+      display: grid;
+      gap: 10px;
     }
 
-    .finish-card span {
-      display: block;
-      color: var(--gold-soft);
+    .journal-meta {
+      color: var(--gold-dark);
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .22em;
-      margin-bottom: 8px;
+      letter-spacing: .14em;
+      font-weight: 700;
     }
 
-    .finish-card h3 {
-      color: var(--white);
-      margin-bottom: 8px;
+    .journal-content a {
+      color: var(--purple-deep);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    .finish-card p {
-      color: rgba(255,255,255,.74);
+    @media (max-width: 900px) {
+      .journal-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* ========== TESTIMONIALS ========== */
-    .testimonial-shell {
-      position: relative;
-    }
-
+    /* ===== TESTIMONIALS ===== */
     .testimonial-track {
       display: grid;
       grid-auto-flow: column;
@@ -714,7 +1050,6 @@
       gap: 14px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
       scrollbar-width: none;
       padding-bottom: 6px;
     }
@@ -723,7 +1058,7 @@
 
     .testimonial-card {
       scroll-snap-align: start;
-      min-height: 230px;
+      min-height: 220px;
       padding: 22px;
       background: var(--white);
       border: 1px solid rgba(30,27,36,.08);
@@ -764,109 +1099,78 @@
       text-transform: uppercase;
       letter-spacing: .18em;
       margin-top: 4px;
+      font-weight: 600;
     }
 
-    .slider-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 18px;
+    @media (max-width: 900px) {
+      .testimonial-track {
+        grid-auto-columns: calc((100% - 14px) / 2);
+      }
     }
 
-    .slider-btn {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line-gold);
-      background: var(--white);
-      color: var(--purple-deep);
-      cursor: pointer;
-      font-size: 18px;
-      transition: background .2s var(--ease);
+    @media (max-width: 620px) {
+      .testimonial-track {
+        grid-auto-columns: 100%;
+      }
     }
 
-    .slider-btn:hover {
-      background: var(--purple-deep);
-      color: var(--gold);
-    }
-
-    /* ========== GALLERY ========== */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr;
-      grid-template-rows: 220px 220px;
-      gap: 14px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      background: var(--img) center/cover no-repeat;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 18px 60px rgba(20,6,31,.08);
-    }
-
-    .gallery-item:first-child {
-      grid-row: span 2;
-    }
-
-    .gallery-item::after {
-      content: "View";
-      position: absolute;
-      inset: auto 14px 14px auto;
-      min-width: 54px;
-      height: 32px;
-      display: grid;
-      place-items: center;
-      background: rgba(20,6,31,.76);
-      color: var(--gold-soft);
-      border: 1px solid var(--line-gold);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity .25s var(--ease), transform .25s var(--ease);
-    }
-
-    .gallery-item:hover::after {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ========== CONTACT ========== */
+    /* ===== CONTACT ===== */
     .contact-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
       gap: 24px;
       align-items: stretch;
+      min-width: 0;
     }
 
     .contact-card {
-      padding: 24px;
+      position: relative;
+      padding: 28px;
       background: var(--white);
-      border: 1px solid rgba(30,27,36,.08);
-      box-shadow: 0 18px 60px rgba(20,6,31,.08);
+      border: 1px solid rgba(227,188,108,.24);
+      box-shadow: var(--shadow-soft);
+      min-width: 0;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(227,188,108,.16);
+      pointer-events: none;
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .contact-list {
-      margin-top: 20px;
+      margin-top: 22px;
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
 
     .contact-item {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       align-items: flex-start;
       color: var(--muted-dark);
-      text-decoration: none;
+      padding: 14px;
+      background: var(--ivory);
+      border: 1px solid rgba(30,27,36,.08);
+      transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
     }
 
-    .contact-item i {
+    .contact-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(227,188,108,.45);
+      background: #fff;
+    }
+
+    .contact-item .icon {
       color: var(--gold);
       margin-top: 2px;
-      font-size: 18px;
     }
 
     .contact-item strong {
@@ -876,26 +1180,32 @@
       margin-bottom: 2px;
     }
 
-    .contact-item span {
+    .contact-item small {
       display: block;
       color: var(--muted-dark);
       font-size: 13px;
       line-height: 1.45;
     }
 
+    .contact-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
     .map-card {
-      min-height: 340px;
+      min-height: 360px;
       position: relative;
       display: grid;
       align-items: end;
       padding: 24px;
       color: var(--white);
-      text-decoration: none;
-      overflow: hidden;
-      box-shadow: 0 18px 60px rgba(20,6,31,.08);
       background:
-        linear-gradient(0deg, rgba(20,6,31,.8), rgba(20,6,31,.12)),
-        url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+        linear-gradient(0deg, rgba(20,6,31,.84), rgba(20,6,31,.22)),
+        url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=82') center/cover;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
     }
 
     .map-card::after {
@@ -906,6 +1216,11 @@
       pointer-events: none;
     }
 
+    .map-card span {
+      position: relative;
+      z-index: 1;
+    }
+
     .map-card strong {
       display: block;
       color: var(--white);
@@ -914,14 +1229,33 @@
       font-weight: 400;
     }
 
-    .map-card span {
+    .map-card small {
+      color: var(--muted-light);
       display: block;
-      color: rgba(255,255,255,.74);
-      font-size: 13px;
       margin-top: 4px;
     }
 
-    /* ========== FOOTER ========== */
+    @media (max-width: 760px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-card {
+        min-height: 270px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .contact-card {
+        padding: 24px;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+      }
+    }
+
+    /* ===== FOOTER ===== */
     .footer {
       padding: 58px 0 22px;
       background:
@@ -936,10 +1270,12 @@
       grid-template-columns: 1.1fr repeat(3, 1fr);
       gap: 32px;
       margin-bottom: 38px;
+      min-width: 0;
     }
 
-    .footer .brand-logo-img {
-      width: 190px;
+    .footer .brand-logo-img,
+    .footer .logo-fallback {
+      width: 170px;
       margin-bottom: 14px;
     }
 
@@ -987,10 +1323,6 @@
       background: rgba(227,188,108,.08);
     }
 
-    .socials i {
-      font-size: 18px;
-    }
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -1002,7 +1334,70 @@
       font-size: 12px;
     }
 
-    /* ========== FLOATING WHATSAPP ========== */
+    @media (max-width: 760px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .footer-bottom {
+        display: grid;
+        gap: 6px;
+      }
+
+      .footer-links a {
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    /* ===== MOBILE CTA + WHATSAPP ===== */
+    .mobile-cta-bar { display: none; }
+
+    @media (max-width: 720px) {
+      .mobile-cta-bar {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        z-index: 95;
+        display: grid;
+        grid-template-columns: 1fr 1.35fr 1fr;
+        gap: 8px;
+        padding: 10px 12px;
+        background: rgba(20,6,31,.88);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--line-gold);
+        border-radius: 60px;
+        box-shadow: 0 18px 60px rgba(0,0,0,.28);
+        max-width: calc(100vw - 24px);
+      }
+
+      .mobile-cta-bar a,
+      .mobile-cta-bar button {
+        min-height: 44px;
+        border: 1px solid rgba(227,188,108,.35);
+        background: transparent;
+        color: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 60px;
+      }
+
+      .mobile-cta-bar button {
+        background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+        color: var(--purple-deep);
+        border: 0;
+      }
+
+      .whatsapp-float { display: none; }
+    }
+
     .whatsapp-float {
       position: fixed;
       right: 18px;
@@ -1013,21 +1408,22 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      color: var(--white);
       background: #25d366;
       box-shadow: 0 18px 48px rgba(37,211,102,.35);
       transition: transform .2s var(--ease);
+      color: white;
     }
 
     .whatsapp-float:hover {
       transform: translateY(-3px) scale(1.03);
     }
 
-    .whatsapp-float i {
-      font-size: 30px;
+    .whatsapp-float .icon {
+      width: 30px;
+      height: 30px;
     }
 
-    /* ========== MODALS ========== */
+    /* ===== MODALS ===== */
     .modal {
       position: fixed;
       inset: 0;
@@ -1042,17 +1438,17 @@
     .modal.open { display: grid; }
 
     .modal-dialog {
-      width: min(640px, 100%);
+      width: min(680px, 100%);
       max-height: 90svh;
       overflow: auto;
-      position: relative;
       background: var(--ivory);
       border: 1px solid var(--line-gold);
-      box-shadow: 0 32px 120px rgba(0,0,0,.38);
+      box-shadow: var(--shadow-deep);
+      position: relative;
     }
 
     .modal-body {
-      padding: 28px;
+      padding: 30px;
     }
 
     .modal-close {
@@ -1066,14 +1462,9 @@
       color: var(--purple-deep);
       font-size: 22px;
       cursor: pointer;
+      z-index: 2;
+      border-radius: 999px;
     }
-
-    .modal-list {
-      margin: 18px 0 0;
-      padding-left: 18px;
-    }
-
-    .modal-list li { margin-bottom: 8px; }
 
     .form-grid {
       display: grid;
@@ -1095,13 +1486,13 @@
     }
 
     .field input,
-    .field textarea {
+    .field textarea,
+    .field select {
       width: 100%;
       border: 1px solid rgba(30,27,36,.12);
       background: var(--white);
-      padding: 12px;
       color: var(--ink);
-      font-size: 14px;
+      padding: 12px;
       outline: none;
     }
 
@@ -1111,28 +1502,65 @@
     }
 
     .field input:focus,
-    .field textarea:focus {
+    .field textarea:focus,
+    .field select:focus {
       border-color: var(--gold);
       box-shadow: 0 0 0 4px rgba(227,188,108,.12);
     }
 
     .form-note {
       min-height: 20px;
-      margin: 4px 0 0;
+      margin-top: 2px;
+      font-size: 12px;
+      color: var(--gold-dark);
+    }
+
+    .privacy-note {
+      margin-top: 12px;
+      font-size: 12px;
       color: var(--muted-dark);
     }
 
     .gallery-preview {
       width: 100%;
-      min-height: 400px;
+      min-height: 480px;
       background: var(--preview) center/cover no-repeat;
     }
 
-    /* ========== REVEAL ANIMATIONS ========== */
+    @media (max-width: 620px) {
+      .modal {
+        align-items: end;
+        padding: 0;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-height: 88svh;
+        border-radius: 22px 22px 0 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .modal-body {
+        padding: 28px 20px calc(28px + env(safe-area-inset-bottom));
+      }
+
+      .modal-close {
+        top: 14px;
+        right: 16px;
+      }
+
+      .gallery-preview {
+        min-height: 300px;
+      }
+    }
+
+    /* ===== REVEAL ===== */
     [data-reveal] {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .65s var(--ease), transform .65s var(--ease);
+      transform: translateY(14px);
+      transition: opacity .55s var(--ease), transform .55s var(--ease);
     }
 
     [data-reveal].visible {
@@ -1140,95 +1568,15 @@
       transform: none;
     }
 
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 960px) {
-      .nav-links,
-      .navbar .btn { display: none; }
-      .menu-toggle { display: flex; }
-
-      .hero-grid,
-      .residence-grid,
-      .investment-grid,
-      .contact-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-grid,
-      .layout-grid,
-      .finish-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .testimonial-track {
-        grid-auto-columns: calc((100% - 14px) / 2);
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .gallery-item:first-child {
-        grid-row: auto;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .logo-link,
-      .brand-logo-img { width: 158px; }
-
-      .hero {
-        min-height: 88svh;
-        background-position: 58% center;
-      }
-
-      .hero-grid {
-        padding-top: 94px;
-        gap: 20px;
-      }
-
-      .hero-actions .btn,
-      .section .btn {
-        width: 100%;
-      }
-
-      .stats-grid,
-      .feature-grid,
-      .layout-grid,
-      .finish-grid,
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        border-right: 0;
-        border-bottom: 1px solid var(--line-dark);
-      }
-
-      .stat:last-child { border-bottom: 0; }
-
-      .image-frame { min-height: 340px; }
-
-      .testimonial-track {
-        grid-auto-columns: 100%;
-      }
-
-      .intro-card,
-      .modal-body,
-      .contact-card {
-        padding: 22px;
-      }
-
-      .gallery-preview {
-        min-height: 280px;
-      }
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
         transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
       }
+
       [data-reveal] {
         opacity: 1;
         transform: none;
@@ -1236,26 +1584,43 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- Progress bar -->
+<body>
   <div class="site-progress" id="siteProgress"></div>
 
-  <!-- Header / Navbar -->
+  <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+    <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M3 5h4a4 4 0 0 1 4 4v2h10a2 2 0 0 1 2 2v6h-2v-3H3v3H1V5h2zm2 6h4V9a2 2 0 0 0-2-2H5v4z"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M12 3 2 11h2v9h6v-6h4v6h6v-9h2L12 3z"/></symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24"><path d="M7 14a5 5 0 1 1 4.6-3h10.2v3h-2v2h-3v-2h-5.2A5 5 0 0 1 7 14zm0-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol>
+    <symbol id="icon-roof" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8h-3v9H6v-9H3zm5 7h8v-7.8l-4-3.6-4 3.6V18z"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.7 6.7l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 21.7 2.3 13.6 2.3 3.3 2.3 2.6 2.9 2 3.6 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.3z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3.5 29l6.8-1.8A12.9 12.9 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 .9.9-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm6-8c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.8.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6l-1-2.2c-.3-.7-.5-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.5z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.1-8.3a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/></symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M15 2c.5 3.2 2.2 5 5 5.3v3.3a8 8 0 0 1-5-1.7v6.8A6.3 6.3 0 1 1 8.7 9.4c.5 0 1 .1 1.4.2v3.5a2.8 2.8 0 1 0 1.9 2.6V2h3z"/></symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22 8s-.2-1.7-.9-2.4c-.8-.9-1.7-.9-2.1-.9C16.1 4.5 12 4.5 12 4.5s-4.1 0-7 .2c-.4 0-1.3 0-2.1.9C2.2 6.3 2 8 2 8s-.2 2-.2 4 .2 4 .2 4 .2 1.7.9 2.4c.8.9 1.9.9 2.4 1 1.7.1 6.7.2 6.7.2s4.1 0 7-.2c.4 0 1.3 0 2.1-.9.7-.7.9-2.4.9-2.4s.2-2 .2-4-.2-4-.2-4zM10 15.5v-7l6 3.5-6 3.5z"/></symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3.2l.8-4h-4V9c0-.7.3-1 1-1z"/></symbol>
+  </svg>
+
   <header class="navbar" id="navbar">
     <nav class="nav-inner" aria-label="Main navigation">
-      <a class="logo-link" href="#top" aria-label="Elysia Olonana home">
-        <img src="favicon-olonana.webp" alt="Elysia Olonana Homes by Design" class="brand-logo-img">
+      <a class="logo-link" href="index.html" aria-label="Elysia Olonana home">
+        <img src="favicon-olonana.webp" alt="Elysia Olonana Homes by Design" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <span class="logo-fallback" style="display:none"><strong>ELYSIA</strong><span>Homes by Design</span></span>
       </a>
+
       <div class="nav-links" id="navLinks">
-        <a href="#residence">Residence</a>
-        <a href="#investment">Price</a>
-        <a href="#layout">Layout</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="project.html">Residence</a>
+        <a href="blog.html">Journal</a>
+        <a href="contact.html">Contact</a>
       </div>
+
       <button class="btn light" type="button" data-open-modal="enquiryModal">Book Viewing</button>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
         <span></span><span></span>
       </button>
     </nav>
@@ -1265,250 +1630,463 @@
 
   <aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
-    <a href="#residence">Residence</a>
-    <a href="#investment">Price</a>
-    <a href="#layout">Layout</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="project.html">Residence</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
   </aside>
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="container hero-grid">
+  <main>
+    <section class="hero" id="top">
+      <div class="container">
         <div class="hero-copy" data-reveal>
           <span class="eyebrow">Kyumvi, Kithini</span>
-          <h1 id="heroTitle">A private residence for calm, modern living.</h1>
-          <p>283 sqm of refined family space: four en-suite bedrooms, service wing, flat-roof terrace potential, and a quiet luxury finish.</p>
+          <h1>A 283 sqm private family home from KSh 23M.</h1>
+          <p>Four en-suite bedrooms, a staff room, laundry area, rooftop terrace space, and a clean modern layout for family living.</p>
+
           <div class="hero-actions">
-            <button class="btn filled" type="button" data-open-modal="enquiryModal">Request Private Viewing</button>
-            <button class="btn light" type="button" data-open-modal="detailsModal">View Quick Details</button>
+            <button class="btn filled" type="button" data-open-modal="enquiryModal">Book a Viewing</button>
+            <a class="btn light" href="project.html">View Home Details</a>
+            <a class="btn light" href="#gallery">See Photos</a>
+          </div>
+
+          <div class="trust-strip" aria-label="Key buyer points">
+            <span>Freehold Title</span>
+            <span>KSh 23M Price</span>
+            <span>Private Viewing</span>
+            <span>Diaspora Support</span>
           </div>
         </div>
-        <aside class="hero-card" data-reveal aria-label="Guide price">
+
+        <aside class="hero-card" data-reveal aria-label="Quick price card">
           <small>Guide price</small>
           <strong>KSh 23M</strong>
-          <span>Private buyer consultations available through WhatsApp, phone, or email.</span>
+          <span>Request the brochure, floor plans, payment guide, and a private site visit.</span>
         </aside>
       </div>
     </section>
 
-    <!-- Quick stats -->
-    <section class="quick-stats" aria-label="Key property facts">
+    <section class="quick-facts" aria-label="Quick property facts">
       <div class="container">
-        <div class="stats-grid" data-reveal>
-          <div class="stat"><strong>283</strong><span>Square metres</span></div>
-          <div class="stat"><strong>4</strong><span>En-suite bedrooms</span></div>
-          <div class="stat"><strong>SQ</strong><span>Service wing</span></div>
-          <div class="stat"><strong>23M</strong><span>Kenyan shillings</span></div>
+        <div class="facts-grid" data-reveal>
+          <div class="fact"><strong>283</strong><span>Square metres</span></div>
+          <div class="fact"><strong>4</strong><span>En-suite rooms</span></div>
+          <div class="fact"><strong>SQ</strong><span>Staff room</span></div>
+          <div class="fact"><strong>23M</strong><span>Kenyan shillings</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Design ethos -->
-    <section class="section" id="ethos">
-      <div class="container">
-        <div class="intro-card" data-reveal>
-          <span class="eyebrow">Design Ethos</span>
-          <h2>Premium does not need to be loud.</h2>
-          <p>Every section is intentionally concise: fewer words, stronger visuals, refined spacing, and details revealed only when the buyer asks for more.</p>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="overview">
+      <div class="container overview-grid">
+        <div class="overview-image" data-reveal></div>
 
-    <!-- Residence -->
-    <section class="section" id="residence">
-      <div class="container residence-grid">
-        <div class="image-frame" data-reveal>
-          <div class="image-badge">
-            <span>Residence scale</span>
-            <strong>283 sqm</strong>
-          </div>
-        </div>
-        <div data-reveal>
+        <div class="overview-copy" data-reveal>
           <div class="section-head">
-            <span class="eyebrow">Residence</span>
-            <h2>Designed around privacy, utility, and elegant daily living.</h2>
-            <p>The page keeps the main experience calm. The deeper sales details live in modals, keeping the layout luxurious and uncluttered.</p>
+            <span class="eyebrow">Home Overview</span>
+            <h2>Modern comfort, clear layout, and space for family life.</h2>
+            <p>This homepage gives the key information quickly. Buyers who want more can view the full residence page, floor plans, gallery, price details, and common questions.</p>
           </div>
-          <div class="feature-grid">
-            <div class="feature"><i class="fas fa-bed"></i><strong>Four en-suite rooms</strong><span>Private bedroom planning.</span></div>
-            <div class="feature"><i class="fas fa-home"></i><strong>283 sqm scale</strong><span>Comfortable family volume.</span></div>
-            <div class="feature"><i class="fas fa-key"></i><strong>SQ and utility</strong><span>Clean service circulation.</span></div>
-            <div class="feature"><i class="fas fa-building"></i><strong>Flat roof concept</strong><span>Terrace lifestyle potential.</span></div>
+
+          <div class="mini-card-grid">
+            <article class="mini-card">
+              <svg class="icon"><use href="#icon-bed"></use></svg>
+              <strong>Four en-suite bedrooms</strong>
+              <span>Each main bedroom has its own bathroom.</span>
+            </article>
+            <article class="mini-card">
+              <svg class="icon"><use href="#icon-home"></use></svg>
+              <strong>283 sqm built area</strong>
+              <span>Good space for a family home.</span>
+            </article>
+            <article class="mini-card">
+              <svg class="icon"><use href="#icon-key"></use></svg>
+              <strong>Staff room and laundry</strong>
+              <span>Designed for daily comfort and privacy.</span>
+            </article>
+            <article class="mini-card">
+              <svg class="icon"><use href="#icon-roof"></use></svg>
+              <strong>Rooftop terrace space</strong>
+              <span>Extra outdoor space above the home.</span>
+            </article>
           </div>
-          <button class="btn filled" type="button" data-open-modal="detailsModal">Open Residence Details</button>
+
+          <div class="hero-actions">
+            <a class="btn filled" href="project.html">See Full Details</a>
+            <button class="btn" type="button" data-open-modal="detailsModal">Quick Summary</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Investment -->
-    <section class="section dark" id="investment">
-      <div class="container investment-grid">
-        <div data-reveal>
-          <span class="eyebrow">Investment</span>
-          <h2>A premium residence from KSh 23 million.</h2>
-          <p>For serious buyers, the inquiry flow sends a prepared message to WhatsApp and opens an email draft to the sales address.</p>
-        </div>
-        <aside class="price-card" data-reveal>
-          <span>Buyer guide</span>
-          <strong>KSh 23,000,000</strong>
-          <ul>
-            <li>Private site viewing</li>
-            <li>Payment milestone discussion</li>
-            <li>Location and acquisition guidance</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Layout -->
-    <section class="section" id="layout">
+    <section class="section dark" id="pathways">
       <div class="container">
         <div class="section-head center" data-reveal>
-          <span class="eyebrow">Layout</span>
-          <h2>Simple layout overview.</h2>
-          <p>The modal gives more information without loading the page with long paragraphs.</p>
+          <span class="eyebrow">Where to Go Next</span>
+          <h2>Choose what you want to see.</h2>
+          <p>Every button leads to the right page or action, so buyers can move quickly.</p>
         </div>
-        <div class="layout-grid">
-          <article class="layout-card" data-reveal><i class="fas fa-home"></i><strong>Living zone</strong><p>Open-plan lounge, dining, and daily family flow.</p></article>
-          <article class="layout-card" data-reveal><i class="fas fa-bed"></i><strong>Private zone</strong><p>Four en-suite bedrooms with privacy-led planning.</p></article>
-          <article class="layout-card" data-reveal><i class="fas fa-concierge-bell"></i><strong>Service zone</strong><p>SQ, laundry, and utility wing for clean operations.</p></article>
-        </div>
-        <div style="text-align:center; margin-top:22px;">
-          <button class="btn" type="button" data-open-modal="floorModal">Open Layout Modal</button>
+
+        <div class="route-grid">
+          <article class="route-card" style="--route-img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=82')" data-reveal>
+            <div>
+              <span>Full home details</span>
+              <h3>View the residence page.</h3>
+              <p>See the specs, floor plans, price, payment guide, gallery, and FAQ.</p>
+              <a class="btn light" href="project.html">Open Residence</a>
+            </div>
+          </article>
+
+          <article class="route-card" style="--route-img:url('https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=82')" data-reveal>
+            <div>
+              <span>Buyer guides</span>
+              <h3>Read simple guides.</h3>
+              <p>Learn about design, buying, payment plans, and what to check before investing.</p>
+              <a class="btn light" href="blog.html">Open Journal</a>
+            </div>
+          </article>
+
+          <article class="route-card" style="--route-img:url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=82')" data-reveal>
+            <div>
+              <span>Book a visit</span>
+              <h3>Talk to the sales office.</h3>
+              <p>Call, WhatsApp, email, or send your details for a private site visit.</p>
+              <a class="btn light" href="contact.html">Open Contact</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Finishes -->
-    <section class="section finishes" id="finishes">
-      <div class="container">
-        <div class="section-head center" data-reveal>
-          <span class="eyebrow">Finishes</span>
-          <h2>Quiet luxury through restrained materials.</h2>
-          <p>Short, visual finish cards keep the page elegant while communicating quality.</p>
-        </div>
-        <div class="finish-grid">
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Stone palette</span><h3>Marble tones</h3><p>Soft veining, warm neutrals, and timeless surfaces.</p></div></article>
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Lighting</span><h3>Concealed ambience</h3><p>Layered lighting for calm evening scenes.</p></div></article>
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Utility</span><h3>Practical elegance</h3><p>Back-of-house planning that keeps the home refined.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials (swipe with Font Awesome stars) -->
-    <section class="section" id="reviews">
-      <div class="container">
-        <div class="section-head center" data-reveal>
-          <span class="eyebrow">Testimonials</span>
-          <h2>Swipe through buyer feedback.</h2>
-        </div>
-        <div class="testimonial-shell" data-reveal>
-          <div class="testimonial-track" id="testimonialTrack" tabindex="0" aria-label="Swipeable testimonials">
-            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The planning feels calm, private, and very practical.”</blockquote></div><footer><strong>David M.</strong><span>Verified Homeowner</span></footer></article>
-            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The service wing makes the home feel genuinely premium.”</blockquote></div><footer><strong>Dr. Amina O.</strong><span>Premium Investor</span></footer></article>
-            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“A strong option for diaspora buyers seeking clarity.”</blockquote></div><footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer></article>
-            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The rooftop idea adds lifestyle value without more land.”</blockquote></div><footer><strong>Grace W.</strong><span>Family Buyer</span></footer></article>
-          </div>
-          <div class="slider-controls">
-            <button class="slider-btn" type="button" id="prevTestimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn" type="button" id="nextTestimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery -->
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-head center" data-reveal>
-          <span class="eyebrow">Portfolio</span>
-          <h2>Visual moments.</h2>
-          <p>Use real renders or project photography here when available.</p>
+          <span class="eyebrow">Photo Preview</span>
+          <h2>A quick look at the home.</h2>
+          <p>Use real renders or site photos here when ready. Tap any image to view it larger.</p>
         </div>
+
         <div class="gallery-grid" data-reveal>
-          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=88" aria-label="Open exterior gallery image"></button>
-          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=88" aria-label="Open interior gallery image"></button>
-          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=88" aria-label="Open finishes gallery image"></button>
-          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=88" aria-label="Open lighting gallery image"></button>
-          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=88" aria-label="Open kitchen gallery image"></button>
+          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=88" aria-label="View exterior image">
+            <span class="gallery-label">Exterior</span>
+          </button>
+          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=88" aria-label="View living room image">
+            <span class="gallery-label">Living Area</span>
+          </button>
+          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=88" aria-label="View finishes image">
+            <span class="gallery-label">Finishes</span>
+          </button>
+          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=88" aria-label="View kitchen image">
+            <span class="gallery-label">Kitchen</span>
+          </button>
+          <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1618219740975-4091bb63b46f?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1618219740975-4091bb63b46f?auto=format&fit=crop&w=1600&q=88" aria-label="View outdoor image">
+            <span class="gallery-label">Outdoor Space</span>
+          </button>
+        </div>
+
+        <div style="text-align:center; margin-top:24px;" data-reveal>
+          <a class="btn filled" href="project.html#gallery">View Full Gallery</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <section class="section dark" id="buying">
+      <div class="container buying-grid">
+        <div data-reveal>
+          <span class="eyebrow">Price and Buying</span>
+          <h2>Clear price. Simple next steps.</h2>
+          <p>The home starts from KSh 23M. Request the payment guide to understand the deposit, payment stages, and what is included.</p>
+
+          <div class="buying-points">
+            <div class="buying-point">
+              <svg class="icon"><use href="#icon-check"></use></svg>
+              <span><strong>Price from KSh 23M</strong><small>Ask for the full payment guide.</small></span>
+            </div>
+            <div class="buying-point">
+              <svg class="icon"><use href="#icon-check"></use></svg>
+              <span><strong>Private site viewing</strong><small>Book a day and time that works for you.</small></span>
+            </div>
+            <div class="buying-point">
+              <svg class="icon"><use href="#icon-check"></use></svg>
+              <span><strong>Diaspora support</strong><small>Remote viewing and follow-up can be arranged.</small></span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="price-card" data-reveal>
+          <span>Guide price</span>
+          <strong>KSh 23,000,000</strong>
+          <p>Includes the main residence details, floor plan guidance, and site visit support.</p>
+          <button class="btn filled" type="button" data-open-modal="enquiryModal">Request Brochure</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="journal-preview">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Journal and Guides</span>
+          <h2>Simple articles for buyers.</h2>
+          <p>Read short guides on design, location, payment, and what to check before buying.</p>
+        </div>
+
+        <div class="journal-grid">
+          <article class="journal-card" data-reveal>
+            <div class="journal-img" style="--img:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82')"></div>
+            <div class="journal-content">
+              <span class="journal-meta">Design</span>
+              <h3>Why flat-roof homes are popular.</h3>
+              <p>Learn how rooftop space can add more outdoor living area.</p>
+              <a href="blog.html">Read Guide →</a>
+            </div>
+          </article>
+
+          <article class="journal-card" data-reveal>
+            <div class="journal-img" style="--img:url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=82')"></div>
+            <div class="journal-content">
+              <span class="journal-meta">Location</span>
+              <h3>What to know about Kyumvi, Kithini.</h3>
+              <p>Understand the location and why buyers are asking about the area.</p>
+              <a href="blog.html">Read Guide →</a>
+            </div>
+          </article>
+
+          <article class="journal-card" data-reveal>
+            <div class="journal-img" style="--img:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=82')"></div>
+            <div class="journal-content">
+              <span class="journal-meta">Buying Guide</span>
+              <h3>What diaspora buyers should ask.</h3>
+              <p>Simple questions to ask before paying a deposit.</p>
+              <a href="blog.html">Read Guide →</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:24px;" data-reveal>
+          <a class="btn" href="blog.html">Open Journal</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Buyer Feedback</span>
+          <h2>What buyers care about.</h2>
+        </div>
+
+        <div class="testimonial-track" data-reveal>
+          <article class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <blockquote>“The layout is clear and practical for family life.”</blockquote>
+            </div>
+            <footer><strong>David M.</strong><span>Family Buyer</span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <blockquote>“The staff room and laundry area make daily life easier.”</blockquote>
+            </div>
+            <footer><strong>Amina O.</strong><span>Home Buyer</span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <blockquote>“The rooftop space is a strong lifestyle feature.”</blockquote>
+            </div>
+            <footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container contact-grid">
         <div class="contact-card" data-reveal>
           <span class="eyebrow">Contact</span>
-          <h2>Begin with a private viewing.</h2>
-          <p>Call, WhatsApp, email, or open the map for directions to the project location.</p>
+          <h2>Book a visit or ask for the brochure.</h2>
+          <p>Call, WhatsApp, email, or send your details. We will help you plan your site visit.</p>
+
           <div class="contact-list">
-            <a class="contact-item" href="tel:+254722414994"><i class="fas fa-phone-alt"></i><span><strong>Phone / WhatsApp</strong><span>0722 414 994</span></span></a>
-            <a class="contact-item" href="mailto:elysiaolonana@gmail.com"><i class="fas fa-envelope"></i><span><strong>Email</strong><span>elysiaolonana@gmail.com</span></span></a>
-            <a class="contact-item" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i><span><strong>Location</strong><span>Kyumvi, Kithini — open in Google Maps</span></span></a>
+            <a class="contact-item" href="tel:+254722414994">
+              <svg class="icon"><use href="#icon-phone"></use></svg>
+              <span><strong>Call the sales office</strong><small>0722 414 994</small></span>
+            </a>
+
+            <a class="contact-item" href="mailto:elysiaolonana@gmail.com">
+              <svg class="icon"><use href="#icon-mail"></use></svg>
+              <span><strong>Email us</strong><small>elysiaolonana@gmail.com</small></span>
+            </a>
+
+            <a class="contact-item" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener">
+              <svg class="icon"><use href="#icon-map"></use></svg>
+              <span><strong>Open map</strong><small>Kyumvi, Kithini — Google Maps</small></span>
+            </a>
           </div>
-          <div style="margin-top:22px;"><button class="btn filled" type="button" data-open-modal="enquiryModal">Open Inquiry Form</button></div>
+
+          <div class="contact-actions">
+            <button class="btn filled" type="button" data-open-modal="enquiryModal">Book a Viewing</button>
+            <a class="btn" href="contact.html">Contact Page</a>
+          </div>
         </div>
+
         <a class="map-card" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener" data-reveal>
-          <span><strong>Open project map</strong><span>Tap to launch Google Maps directions.</span></span>
+          <span><strong>Project location</strong><small>Open Google Maps for directions.</small></span>
         </a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="favicon-olonana.webp" alt="Elysia Olonana" class="brand-logo-img" style="width:190px; margin-bottom:14px;">
-        <p>Private architectural residences in Kyumvi, Kithini. Modern family scale, quiet luxury, and practical long-term value.</p>
+        <img src="favicon-olonana.webp" alt="Elysia Olonana" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <span class="logo-fallback" style="display:none"><strong>ELYSIA</strong><span>Homes by Design</span></span>
+        <p>Private family homes in Kyumvi, Kithini. Modern design, clear layouts, and practical long-term value.</p>
+
         <div class="socials" aria-label="Social links">
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><svg class="icon"><use href="#icon-instagram"></use></svg></a>
+          <a href="#" aria-label="TikTok"><svg class="icon"><use href="#icon-tiktok"></use></svg></a>
+          <a href="#" aria-label="YouTube"><svg class="icon"><use href="#icon-youtube"></use></svg></a>
+          <a href="#" aria-label="Facebook"><svg class="icon"><use href="#icon-facebook"></use></svg></a>
         </div>
       </div>
-      <div><div class="footer-title">Explore</div><div class="footer-links"><a href="#residence">Residence</a><a href="#investment">Pricing</a><a href="#layout">Layout</a><a href="#reviews">Testimonials</a></div></div>
-      <div><div class="footer-title">Buyer Info</div><div class="footer-links"><a href="#" data-open-modal="detailsModal">Quick Details</a><a href="#" data-open-modal="floorModal">Floor Overview</a><a href="#" data-open-modal="enquiryModal">Book Viewing</a><a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank">Project Location</a></div></div>
-      <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+254722414994">0722 414 994</a><a href="https://wa.me/254722414994" target="_blank">WhatsApp</a><a href="mailto:elysiaolonana@gmail.com">elysiaolonana@gmail.com</a><a href="#contact">Contact Section</a></div></div>
+
+      <div>
+        <div class="footer-title">Explore</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="project.html">Residence</a>
+          <a href="blog.html">Journal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Buyer Info</div>
+        <div class="footer-links">
+          <a href="project.html#summary">Quick Summary</a>
+          <a href="project.html#plans">Floor Plans</a>
+          <a href="project.html#investment">Price and Payment</a>
+          <a href="#" data-open-modal="enquiryModal">Book Viewing</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:+254722414994">0722 414 994</a>
+          <a href="https://wa.me/254722414994" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:elysiaolonana@gmail.com">elysiaolonana@gmail.com</a>
+          <a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener">Open Map</a>
+        </div>
+      </div>
     </div>
-    <div class="container footer-bottom"><span>&copy; 2026 Elysia Olonana Homes by Design.</span><span>Instagram / TikTok / YouTube / Facebook</span></div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Elysia Olonana Homes by Design.</span>
+      <span>Instagram / TikTok / YouTube / Facebook</span>
+    </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <div class="mobile-cta-bar">
+    <a href="tel:+254722414994">Call</a>
+    <button type="button" data-open-modal="enquiryModal">Book Visit</button>
+    <a href="https://wa.me/254722414994" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 
-  <!-- Modals -->
+  <a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+  </a>
+
   <div class="modal" id="enquiryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="enquiryTitle">
-    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button><div class="modal-body"><span class="eyebrow">Private Inquiry</span><h2 id="enquiryTitle">Request a private viewing.</h2><p>Submit once. The page opens WhatsApp with your message and prepares an email to elysiaolonana@gmail.com.</p><form class="form-grid" id="leadForm"><div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required /></div><div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div><div class="field"><label for="message">Message</label><textarea id="message" name="message">I would like to request a private viewing for the Elysia Olonana 283 sqm residence priced at KSh 23 million.</textarea></div><button class="btn filled" type="submit">Send to WhatsApp + Email</button><p class="form-note" id="formNote" role="status" aria-live="polite"></p></form></div></div>
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <span class="eyebrow">Request Info</span>
+        <h2 id="enquiryTitle">Book a viewing or ask for the brochure.</h2>
+        <p>Send your details. The page will open WhatsApp and prepare an email to the sales office.</p>
+
+        <form class="form-grid" id="leadForm">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="buyerType">Buyer type</label>
+            <select id="buyerType" name="buyerType">
+              <option value="">Select one</option>
+              <option>Home buyer</option>
+              <option>Investor</option>
+              <option>Diaspora buyer</option>
+              <option>Agent / representative</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="viewingDate">Preferred viewing date</label>
+            <input id="viewingDate" name="viewingDate" type="date" />
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message">I would like to request the brochure and book a private viewing of the 283 sqm home.</textarea>
+          </div>
+
+          <button class="btn filled" type="submit">Send Request</button>
+          <p class="privacy-note">We only use your details to arrange a viewing or answer your questions.</p>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
   </div>
 
   <div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="detailsTitle">
-    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Quick Details</span><h2 id="detailsTitle">Residence summary.</h2><ul class="modal-list"><li>Guide price: KSh 23,000,000.</li><li>Location: Kyumvi, Kithini.</li><li>Size: 283 sqm.</li><li>Bedrooms: 4 en-suite.</li><li>Includes SQ, laundry/utility wing, and flat-roof terrace potential.</li></ul></div></div>
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <span class="eyebrow">Quick Summary</span>
+        <h2 id="detailsTitle">Home details.</h2>
+        <ul style="margin-top:16px; padding-left:18px;">
+          <li>Price: KSh 23,000,000.</li>
+          <li>Size: 283 sqm.</li>
+          <li>Four en-suite bedrooms.</li>
+          <li>Staff room and laundry area.</li>
+          <li>Space for a rooftop terrace.</li>
+          <li>Location: Kyumvi, Kithini.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div class="modal" id="floorModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="floorTitle">
-    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Layout Overview</span><h2 id="floorTitle">Spatial planning.</h2><p>Keep the landing page light. Use this modal for buyers who want deeper layout information.</p><ul class="modal-list"><li>Living zone: lounge, dining, and family flow.</li><li>Private zone: four en-suite bedrooms.</li><li>Service zone: SQ, laundry, and utility circulation.</li><li>Roof zone: flat-roof terrace lifestyle potential.</li></ul></div></div>
-  </div>
-
-  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Gallery preview">
-    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="gallery-preview" id="galleryPreview"></div></div>
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Gallery image preview">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
+      <div class="gallery-preview" id="galleryPreview"></div>
+    </div>
   </div>
 
   <script>
-    // (JavaScript remains functionally identical, only icon references removed)
     const navbar = document.getElementById("navbar");
     const progress = document.getElementById("siteProgress");
     const menuToggle = document.getElementById("menuToggle");
     const mobilePanel = document.getElementById("mobilePanel");
     const mobileClose = document.getElementById("mobileClose");
     const scrim = document.getElementById("scrim");
-    const track = document.getElementById("testimonialTrack");
-    const prev = document.getElementById("prevTestimonial");
-    const next = document.getElementById("nextTestimonial");
     const leadForm = document.getElementById("leadForm");
     const formNote = document.getElementById("formNote");
     const galleryPreview = document.getElementById("galleryPreview");
@@ -1516,12 +2094,26 @@
     const whatsappNumber = "254722414994";
     const businessEmail = "elysiaolonana@gmail.com";
 
+    let lastScrollY = window.scrollY;
+
     function updateScrollUI() {
       const scrollTop = window.scrollY;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const percent = max > 0 ? (scrollTop / max) * 100 : 0;
+
       navbar.classList.toggle("scrolled", scrollTop > 24);
-      progress.style.width = `${percent}%`;
+      progress.style.width = percent + "%";
+
+      const scrollingDown = scrollTop > lastScrollY;
+      const pastHero = scrollTop > 120;
+
+      if (scrollingDown && pastHero && !document.body.classList.contains("menu-open")) {
+        navbar.classList.add("nav-hidden");
+      } else {
+        navbar.classList.remove("nav-hidden");
+      }
+
+      lastScrollY = Math.max(scrollTop, 0);
     }
 
     window.addEventListener("scroll", updateScrollUI, { passive: true });
@@ -1535,6 +2127,7 @@
       mobilePanel.setAttribute("aria-hidden", "false");
       menuToggle.setAttribute("aria-expanded", "true");
       menuToggle.classList.add("is-open");
+      navbar.classList.remove("nav-hidden");
     }
 
     function closeMenu() {
@@ -1552,7 +2145,7 @@
     menuToggle.addEventListener("click", openMenu);
     mobileClose.addEventListener("click", closeMenu);
     scrim.addEventListener("click", closeMenu);
-    mobilePanel.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 
     function openModal(id) {
       const modal = document.getElementById(id);
@@ -1560,117 +2153,114 @@
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
-      const focusable = modal.querySelector("button, input, textarea, a");
+      navbar.classList.remove("nav-hidden");
+      const focusable = modal.querySelector("button, input, textarea, select, a");
       if (focusable) setTimeout(() => focusable.focus(), 50);
     }
 
     function closeModal(modal) {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
-      if (!document.querySelector(".modal.open")) document.body.classList.remove("modal-open");
+      if (!document.querySelector(".modal.open")) {
+        document.body.classList.remove("modal-open");
+      }
     }
 
-    document.querySelectorAll("[data-open-modal]").forEach((trigger) => {
-      trigger.addEventListener("click", (event) => {
+    document.querySelectorAll("[data-open-modal]").forEach(trigger => {
+      trigger.addEventListener("click", event => {
         event.preventDefault();
         openModal(trigger.dataset.openModal);
       });
     });
 
-    document.querySelectorAll("[data-close-modal]").forEach((button) => {
+    document.querySelectorAll("[data-close-modal]").forEach(button => {
       button.addEventListener("click", () => closeModal(button.closest(".modal")));
     });
 
-    document.querySelectorAll(".modal").forEach((modal) => {
-      modal.addEventListener("click", (event) => {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.addEventListener("click", event => {
         if (event.target === modal) closeModal(modal);
       });
     });
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
         document.querySelectorAll(".modal.open").forEach(closeModal);
         if (mobilePanel.classList.contains("open")) closeMenu();
       }
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", (event) => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", event => {
         const href = anchor.getAttribute("href");
         if (!href || href === "#") return;
         const target = document.querySelector(href);
         if (!target) return;
         event.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
+        closeMenu();
       });
     });
 
-    function slideTestimonials(direction) {
-      const card = track.querySelector(".testimonial-card");
-      const distance = card ? card.offsetWidth + 14 : track.clientWidth;
-      track.scrollBy({ left: direction * distance, behavior: "smooth" });
-    }
-
-    prev.addEventListener("click", () => slideTestimonials(-1));
-    next.addEventListener("click", () => slideTestimonials(1));
-
-    let autoSlide = setInterval(() => slideTestimonials(1), 5200);
-    track.addEventListener("pointerdown", () => clearInterval(autoSlide), { once: true });
-
-    document.querySelectorAll(".gallery-item").forEach((item) => {
+    document.querySelectorAll(".gallery-item").forEach(item => {
       item.addEventListener("click", () => {
         const img = item.dataset.galleryImg;
-        galleryPreview.style.setProperty("--preview", `url('${img}')`);
+        if (!img) return;
+        galleryPreview.style.setProperty("--preview", "url('" + img + "')");
         openModal("galleryModal");
       });
     });
 
     if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         });
       }, { threshold: .15 });
-      document.querySelectorAll("[data-reveal]").forEach((item) => revealObserver.observe(item));
+
+      document.querySelectorAll("[data-reveal]").forEach(item => revealObserver.observe(item));
     } else {
-      document.querySelectorAll("[data-reveal]").forEach((item) => item.classList.add("visible"));
+      document.querySelectorAll("[data-reveal]").forEach(item => item.classList.add("visible"));
     }
 
-    const sections = [...document.querySelectorAll("main section[id]")];
-    const navAnchors = [...document.querySelectorAll("#navLinks a")];
-    if ("IntersectionObserver" in window) {
-      const activeObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navAnchors.forEach((link) => {
-            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-          });
-        });
-      }, { rootMargin: "-45% 0px -50% 0px" });
-      sections.forEach((section) => activeObserver.observe(section));
-    }
-
-    leadForm.addEventListener("submit", (event) => {
+    leadForm?.addEventListener("submit", event => {
       event.preventDefault();
+
       if (!leadForm.checkValidity()) {
         formNote.textContent = "Please complete all required fields.";
         return;
       }
-      const formData = new FormData(leadForm);
-      const name = formData.get("name").trim();
-      const phone = formData.get("phone").trim();
-      const email = formData.get("email").trim();
-      const message = formData.get("message").trim();
-      const plainMessage = `New Elysia Olonana inquiry\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}\n\nProperty: 283 sqm residence\nPrice: KSh 23,000,000\nLocation: Kyumvi, Kithini`;
-      const encodedMessage = encodeURIComponent(plainMessage);
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      const mailSubject = encodeURIComponent("Elysia Olonana Private Viewing Inquiry");
-      const mailtoUrl = `mailto:${businessEmail}?subject=${mailSubject}&body=${encodedMessage}`;
-      formNote.textContent = "Opening WhatsApp and preparing your email client...";
-      window.open(whatsappUrl, "_blank", "noopener");
-      setTimeout(() => { window.location.href = mailtoUrl; }, 650);
+
+      const fd = new FormData(leadForm);
+      const name = (fd.get("name") || "").trim();
+      const phone = (fd.get("phone") || "").trim();
+      const email = (fd.get("email") || "").trim();
+      const buyerType = (fd.get("buyerType") || "").trim();
+      const viewingDate = (fd.get("viewingDate") || "").trim();
+      const message = (fd.get("message") || "").trim();
+
+      const plain =
+        "New inquiry from Elysia Olonana homepage\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Buyer type: " + (buyerType || "Not specified") + "\n" +
+        "Preferred viewing date: " + (viewingDate || "Not specified") + "\n" +
+        "Message: " + message + "\n\n" +
+        "Property: 283 sqm home\n" +
+        "Price: KSh 23,000,000\n" +
+        "Location: Kyumvi, Kithini";
+
+      const encoded = encodeURIComponent(plain);
+      formNote.textContent = "Opening WhatsApp and preparing your email...";
+
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + encoded, "_blank", "noopener");
+
+      setTimeout(() => {
+        window.location.href = "mailto:" + businessEmail + "?subject=Elysia%20Olonana%20Homepage%20Inquiry&body=" + encoded;
+      }, 650);
     });
   </script>
 </body>

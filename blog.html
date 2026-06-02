@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Property insights, architecture trends, and investment guides from Elysia Olonana – the leading voice in modern flat‑roof residences in Kyumvi, Kithini." />
+  <meta name="theme-color" content="#14061f" />
+  <title>Elysia Olonana | Property Insights – Journal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* ========== GLOBAL & RESET (same as project page) ========== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --purple-deep: #14061f; --purple-soft: #2c1a38; --gold: #e3bc6c;
+      --gold-soft: #f4dca1; --gold-dark: #a9792e; --white: #ffffff;
+      --ivory: #fbf7ef; --muted-light: rgba(255,255,255,.72);
+      --muted-dark: #6b6372; --ink: #1e1b24; --line-gold: rgba(227,188,108,.28);
+      --line-dark: rgba(30,27,36,.1); --shadow-soft: 0 24px 80px rgba(20,6,31,.16);
+      --shadow-deep: 0 34px 100px rgba(0,0,0,.32); --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, sans-serif; --container: min(1120px, calc(100vw - 32px));
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+    body {
+      margin: 0; background: var(--ivory); color: var(--ink); font-family: var(--sans); font-size: 14px;
+      max-width: 100%; overflow-x: clip;
+    }
+    body.menu-open, body.modal-open { overflow: hidden; }
+    @media (max-width: 720px) { body { padding-bottom: 92px; } }
+    img, video, iframe, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; max-width: 100%; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
+    h1 { font-size: clamp(30px, 4.4vw, 36px); line-height: 1.05; }
+    h2 { font-size: clamp(24px, 3vw, 28px); line-height: 1.12; }
+    h3 { font-size: 22px; line-height: 1.2; }
+    p, li, a, span, strong, dd, dt { overflow-wrap: anywhere; }
+    .container { width: var(--container); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    .section { padding: 72px 0; overflow-x: clip; }
+    @media (max-width: 620px) { .section { padding: 54px 0; } }
+    .section-head { display: grid; gap: 12px; max-width: 620px; margin-bottom: 48px; }
+    .section-head.center { margin-inline: auto; text-align: center; justify-items: center; }
+    .btn {
+      min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 0 18px; border: 1px solid var(--gold); background: transparent; color: var(--purple-deep);
+      text-transform: uppercase; letter-spacing: .18em; font-size: 11px; font-weight: 600; cursor: pointer;
+      transition: transform .25s var(--ease), background .25s var(--ease);
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--gold); color: var(--purple-deep); box-shadow: 0 14px 34px rgba(227,188,108,.24); }
+    .btn.light { color: var(--white); }
+    .btn.filled { background: linear-gradient(135deg, var(--gold), var(--gold-soft)); border-color: transparent; color: var(--purple-deep); }
+
+    /* ===== SMART NAVBAR (hide on scroll, show on up) ===== */
+    .site-progress { position: fixed; inset: 0 auto auto 0; z-index: 100; height: 2px; width: 0%; background: linear-gradient(90deg, var(--gold-dark), var(--gold-soft)); }
+    .navbar {
+      position: fixed; inset: 0 0 auto; z-index: 90; padding: 12px 0; padding-top: calc(12px + env(safe-area-inset-top));
+      background: linear-gradient(180deg, rgba(20,6,31,.74), transparent); transition: transform .32s var(--ease), background .28s var(--ease), border-color .28s var(--ease), padding .28s var(--ease);
+      border-bottom: 1px solid transparent; transform: translateY(0);
+    }
+    .navbar.nav-hidden { transform: translateY(-110%); }
+    .navbar.scrolled { padding: 8px 0; padding-top: calc(8px + env(safe-area-inset-top)); background: rgba(20,6,31,.9); backdrop-filter: blur(16px); border-color: var(--line-gold); }
+    .nav-inner { width: min(1220px, calc(100vw - 32px)); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 52px; }
+    .logo-link { display: inline-flex; align-items: center; width: 138px; }
+    .brand-logo-img { width: 138px; max-height: 42px; object-fit: contain; }
+    @media (max-width: 620px) { .logo-link, .brand-logo-img { width: 124px; max-height: 38px; } }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { position: relative; color: rgba(255,255,255,.78); text-transform: uppercase; letter-spacing: .18em; font-size: 10px; font-weight: 600; transition: color .2s var(--ease); }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 100%; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .25s var(--ease); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-soft); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+    .menu-toggle {
+      display: none; width: 40px; height: 40px; border: 1px solid rgba(227,188,108,.32); background: rgba(255,255,255,.06); backdrop-filter: blur(12px);
+      border-radius: 999px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 16px; height: 1px; background: var(--gold-soft); transition: transform .25s var(--ease); }
+    .menu-toggle.is-open span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle.is-open span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .mobile-panel {
+      position: fixed; inset: 0 0 0 auto; width: min(380px, 88vw); z-index: 120;
+      background: radial-gradient(circle at 70% 0%, rgba(227,188,108,.12), transparent 18rem), var(--purple-deep);
+      border-left: 1px solid var(--line-gold); backdrop-filter: blur(18px);
+      padding: 78px 24px 24px; padding-top: calc(78px + env(safe-area-inset-top));
+      box-shadow: -24px 0 80px rgba(0,0,0,.36); transform: translateX(110%); transition: transform .35s var(--ease);
+    }
+    .mobile-panel.open { transform: translateX(0); }
+    .mobile-panel a {
+      display: block; padding: 18px 0; color: var(--white); font-family: var(--serif); font-size: 22px;
+      border-bottom: 1px solid rgba(227,188,108,.18); position: relative;
+    }
+    .mobile-panel a::after { content: "→"; float: right; color: var(--gold); font-family: var(--sans); font-size: 14px; margin-top: 6px; }
+    .mobile-close { position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; border: 1px solid var(--line-gold); background: transparent; color: var(--gold); font-size: 24px; cursor: pointer; border-radius: 999px; }
+    .scrim { position: fixed; inset: 0; z-index: 110; background: rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
+    .scrim.open { opacity: 1; pointer-events: auto; }
+
+    /* ===== SHOW HAMBURGER ON MOBILE ===== */
+    @media (max-width: 960px) {
+      .nav-links, .navbar .btn { display: none; }
+      .menu-toggle { display: flex; }
+    }
+
+    /* ===== BLOG HERO ===== */
+    .blog-hero {
+      position: relative; min-height: 46vh; display: grid; align-items: center;
+      background: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat;
+      color: var(--white); isolation: isolate;
+    }
+    .blog-hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(20,6,31,.78), rgba(20,6,31,.92));
+      z-index: 0;
+    }
+    .blog-hero .container { position: relative; z-index: 1; padding-top: 120px; padding-bottom: 40px; text-align: left; }
+    .blog-hero h1 { margin: 16px 0; text-shadow: 0 2px 10px rgba(0,0,0,.2); }
+    .blog-hero p { color: var(--muted-light); max-width: 560px; }
+    @media (max-width: 620px) {
+      .blog-hero { min-height: 52vh; }
+      .blog-hero .container { padding-top: calc(110px + env(safe-area-inset-top)); text-align: left; }
+      .blog-hero h1 { font-size: clamp(26px, 5vw, 32px); max-width: 330px; }
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-wrapper { max-width: 480px; margin: 0 auto 40px; position: relative; }
+    .search-wrapper i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 16px; pointer-events: none; }
+    .search-input {
+      width: 100%; padding: 14px 20px 14px 48px; border: 1px solid var(--line-dark); background: var(--white);
+      font-size: 14px; border-radius: 2px; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,188,108,.18); }
+    @media (max-width: 620px) {
+      .search-wrapper { max-width: 100%; margin-bottom: 32px; }
+      .search-input { padding-left: 48px; font-size: 14px; }
+    }
+
+    /* ===== BLOG GRID (single column on mobile) ===== */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px; margin-bottom: 48px; }
+    .blog-card {
+      background: var(--white); border: none; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 18px 48px rgba(20,6,31,.12); transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-6px); box-shadow: 0 28px 68px rgba(20,6,31,.22); }
+    .blog-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .blog-content { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); font-weight: 600; }
+    .blog-meta span.category { background: rgba(227,188,108,.12); padding: 4px 8px; border-radius: 20px; color: var(--gold-dark); }
+    .read-more {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600;
+      color: var(--purple-deep); text-transform: uppercase; letter-spacing: .1em; transition: gap 0.2s;
+    }
+    .read-more i { font-size: 12px; }
+    .read-more:hover { gap: 12px; color: var(--gold); }
+    @media (max-width: 620px) {
+      .blog-grid { grid-template-columns: 1fr; gap: 24px; margin-inline: auto; }
+      .blog-card { border-radius: 12px; }
+      .read-more { font-size: 14px; gap: 10px; }
+    }
+
+    /* ===== PAGINATION ===== */
+    .pagination { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .page-btn {
+      min-width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line-dark); background: var(--white); color: var(--purple-deep); font-weight: 500;
+      transition: all 0.2s; cursor: pointer; border-radius: 2px;
+    }
+    .page-btn.active { background: var(--gold); border-color: var(--gold); color: var(--purple-deep); }
+    .page-btn:hover:not(.disabled) { background: var(--gold-soft); border-color: var(--gold); transform: translateY(-2px); }
+    .page-btn.disabled { opacity: 0.4; cursor: not-allowed; }
+    @media (max-width: 620px) {
+      .pagination { gap: 10px; }
+      .page-btn { min-width: 44px; height: 44px; font-size: 12px; }
+    }
+
+    /* ===== CONTACT SECTION (matching project page) ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .contact-card { padding: 32px; background: var(--white); border: 1px solid var(--line-dark); box-shadow: var(--shadow-soft); }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 16px; }
+    .contact-actions a, .contact-actions button { min-height: 44px; padding: 0 20px; border: 1px solid var(--line-gold); background: transparent; font-size: 11px; text-transform: uppercase; letter-spacing: .16em; cursor: pointer; transition: all 0.2s; }
+    .contact-actions a:hover, .contact-actions button:hover { background: var(--gold); color: var(--purple-deep); }
+    .map-card iframe { width: 100%; height: 100%; min-height: 280px; border: 0; border-radius: 4px; }
+    .privacy-note { margin-top: 12px; font-size: 12px; color: var(--muted-dark); }
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .map-card iframe { min-height: 260px; }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer { padding: 58px 0 22px; background: radial-gradient(circle at 85% 10%, rgba(227,188,108,.12), transparent 20rem), var(--purple-deep); color: var(--white); border-top: 1px solid var(--line-gold); }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr repeat(3, 1fr); gap: 32px; margin-bottom: 38px; }
+    .footer .brand-logo-img { width: 160px; margin-bottom: 14px; }
+    .footer p, .footer a { color: rgba(255,255,255,.7); font-size: 13px; }
+    .footer a:hover { color: var(--gold-soft); }
+    .footer-title { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: .22em; margin-bottom: 14px; }
+    .footer-links { display: grid; gap: 9px; }
+    .socials { display: flex; gap: 10px; margin-top: 16px; }
+    .socials a { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(227,188,108,.25); color: var(--gold-soft); border-radius: 999px; transition: transform .2s; }
+    .socials a:hover { transform: translateY(-2px); background: rgba(227,188,108,.08); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.09); color: rgba(255,255,255,.48); font-size: 12px; }
+    @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 26px; } .footer-bottom { display: grid; gap: 6px; } }
+
+    /* ===== MOBILE STICKY CTA ===== */
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 720px) {
+      .mobile-cta-bar {
+        position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 95;
+        display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 8px; padding: 10px 12px;
+        background: rgba(20,6,31,.88); backdrop-filter: blur(16px); border-radius: 60px; box-shadow: 0 18px 60px rgba(0,0,0,.28);
+      }
+      .mobile-cta-bar a, .mobile-cta-bar button {
+        min-height: 44px; border: 1px solid rgba(227,188,108,.35); background: transparent; color: #fff;
+        font-size: 11px; text-transform: uppercase; letter-spacing: .16em; display: flex; align-items: center; justify-content: center;
+        border-radius: 60px; text-decoration: none; cursor: pointer;
+      }
+      .mobile-cta-bar button { background: linear-gradient(135deg, var(--gold), var(--gold-soft)); color: var(--purple-deep); border: 0; }
+      .whatsapp-float { display: none; }
+    }
+
+    .whatsapp-float { position: fixed; right: 18px; bottom: 18px; z-index: 80; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #25d366; box-shadow: 0 18px 48px rgba(37,211,102,.35); transition: transform .2s; color: white; }
+    .whatsapp-float:hover { transform: translateY(-3px) scale(1.03); }
+    .whatsapp-float i { font-size: 30px; }
+
+    /* ===== MODALS (bottom-sheet on mobile) ===== */
+    .modal { position: fixed; inset: 0; z-index: 160; display: none; place-items: center; padding: 20px; background: rgba(0,0,0,.62); backdrop-filter: blur(6px); }
+    .modal.open { display: grid; }
+    .modal-dialog { width: min(640px, 100%); max-height: 90svh; overflow: auto; background: var(--ivory); border: 1px solid var(--line-gold); box-shadow: var(--shadow-deep); }
+    .modal-body { padding: 28px; }
+    .modal-close { position: absolute; right: 12px; top: 12px; width: 38px; height: 38px; border: 1px solid var(--line-dark); background: var(--white); color: var(--purple-deep); font-size: 22px; cursor: pointer; border-radius: 999px; }
+    @media (max-width: 620px) {
+      .modal { align-items: end; padding: 0; }
+      .modal-dialog { width: 100%; max-height: 88svh; border-radius: 22px 22px 0 0; border-left: 0; border-right: 0; border-bottom: 0; }
+      .modal-body { padding: 28px 20px calc(28px + env(safe-area-inset-bottom)); }
+      .modal-close { top: 14px; right: 16px; }
+    }
+    .form-grid { display: grid; gap: 12px; margin-top: 18px; }
+    .field { display: grid; gap: 6px; }
+    .field input, .field textarea, .field select { width: 100%; border: 1px solid rgba(30,27,36,.12); background: var(--white); padding: 12px; outline: none; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(227,188,108,.12); }
+
+    /* ===== REVEAL ANIMATION ===== */
+    [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    [data-reveal].visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+<div class="site-progress" id="siteProgress"></div>
+
+<header class="navbar" id="navbar">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a class="logo-link" href="index.html" aria-label="Elysia Olonana home">
+      <img src="favicon-olonana.webp" alt="Elysia Olonana Homes by Design" class="brand-logo-img">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="project.html">Residence</a>
+      <a href="blog.html" class="active">Journal</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="btn light" type="button" data-open-modal="enquiryModal">Book Viewing</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="project.html">Residence</a>
+  <a href="blog.html">Journal</a>
+  <a href="#contact">Contact</a>
+</aside>
+
+<main>
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="container" data-reveal>
+      <span class="eyebrow">Property Insights</span>
+      <h1>Stories, ideas & architecture</h1>
+      <p>Expert perspectives on flat‑roof living, Kyumvi real estate, investment strategy, and modern family design.</p>
+    </div>
+  </section>
+
+  <!-- Blog Grid + Search + Pagination -->
+  <section class="section">
+    <div class="container">
+      <div class="search-wrapper" data-reveal>
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search articles..." autocomplete="off">
+      </div>
+
+      <div class="blog-grid" id="blogGrid"></div>
+
+      <div class="pagination" id="paginationContainer"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section (matches project page) -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-card" data-reveal>
+        <span class="eyebrow">Contact us</span>
+        <h2>Book a visit or ask for info</h2>
+        <div class="contact-actions">
+          <a href="tel:+254722414994"><i class="fas fa-phone"></i> Call</a>
+          <a href="https://wa.me/254722414994" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <button data-open-modal="enquiryModal">Request viewing</button>
+        </div>
+        <p><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Kyumvi, Kithini (off Machakos Road)</p>
+        <p class="privacy-note">We only use your details to arrange a viewing or answer your questions.</p>
+      </div>
+      <div class="map-card" data-reveal>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.384742515405!2d37.193297!3d-1.535977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f855baaedb77f%3A0x66540358a1f98082!2sElysia%20Olonana!5e0!3m2!1sen!2ske!4v1780329111468!5m2!1sen!2ske" 
+          width="100%" height="100%" style="min-height:280px; border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><img src="favicon-olonana.webp" alt="Elysia Olonana" class="brand-logo-img" style="width:160px; margin-bottom:14px;"><p>Private architectural residences in Kyumvi, Kithini. Modern family scale, quiet luxury, and practical long-term value.</p><div class="socials"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div></div>
+    <div><div class="footer-title">Explore</div><div class="footer-links"><a href="index.html">Home</a><a href="project.html">Residence</a><a href="blog.html">Journal</a><a href="#contact">Contact</a></div></div>
+    <div><div class="footer-title">Info</div><div class="footer-links"><a href="#" data-open-modal="detailsModal">Quick details</a><a href="#" data-open-modal="floorModal">Floor plans</a><a href="#" data-open-modal="enquiryModal">Book viewing</a><a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank">Location map</a></div></div>
+    <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+254722414994">0722 414 994</a><a href="https://wa.me/254722414994" target="_blank">WhatsApp</a><a href="mailto:elysiaolonana@gmail.com">Email</a></div></div>
+  </div>
+  <div class="container footer-bottom"><span>&copy; 2026 Elysia Olonana Homes by Design.</span><span>Instagram / TikTok / YouTube / Facebook</span></div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="tel:+254722414994">Call</a>
+  <button type="button" data-open-modal="enquiryModal">Book visit</button>
+  <a href="https://wa.me/254722414994" target="_blank">WhatsApp</a>
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Modals -->
+<div class="modal" id="enquiryModal" role="dialog" aria-modal="true">
+  <div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Request info</span><h2>Book a viewing or get the brochure</h2><form class="form-grid" id="leadForm"><div class="field"><label>Full name *</label><input id="name" name="name" type="text" required /></div><div class="field"><label>Phone / WhatsApp *</label><input id="phone" name="phone" type="tel" required /></div><div class="field"><label>Email *</label><input id="email" name="email" type="email" required /></div><div class="field"><label>Buyer type</label><select id="buyerType" name="buyerType"><option>Homeowner</option><option>Investor</option><option>Diaspora buyer</option><option>Agent</option></select></div><div class="field"><label>Preferred viewing date (optional)</label><input id="date" name="date" type="date" /></div><div class="field"><label>Message</label><textarea id="message" rows="3">I would like to receive the brochure and schedule a site viewing for the 283 sqm residence.</textarea></div><button class="btn filled" type="submit">Send request</button><p class="form-note" id="formNote"></p></form></div></div>
+</div>
+<div class="modal" id="detailsModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Quick details</span><h2>Residence summary</h2><ul><li>Price: KSh 23,000,000</li><li>283 sqm, 4 en‑suite bedrooms</li><li>Servant quarters + utility wing</li><li>Flat‑roof terrace potential</li><li>Freehold title, turnkey delivery</li></ul></div></div></div>
+<div class="modal" id="floorModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Layout Overview</span><h2>Floor plans</h2><img src="https://placehold.co/800x500/14061f/e3bc6c?text=Floor+Plan+Preview" alt="Floor plan" style="width:100%; margin-top: 16px;"></div></div></div>
+
+<script>
+  (function(){
+    // ==================== BLOG DATA ====================
+    const allPosts = [
+      { title: "Why flat‑roof design is redefining modern luxury in Kenya", excerpt: "Explore the engineering and lifestyle benefits of flat roofs – from waterproofing to rooftop gardens and panoramic views.", date: "May 28, 2026", category: "Architecture", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "Servant quarters vs utility wing: designing for family privacy", excerpt: "How thoughtful zoning creates separation between service staff and family living without sacrificing elegance.", date: "May 20, 2026", category: "Design", img: "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "Kyumvi, Kithini: why investors are watching this corridor", excerpt: "Infrastructure growth, land value trends, and the shift towards modern gated communities.", date: "May 12, 2026", category: "Investment", img: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "10 finishes that define quiet luxury in a 283 sqm home", excerpt: "From Italian marble to concealed lighting – materials that age beautifully and elevate daily life.", date: "May 5, 2026", category: "Finishes", img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "Flat‑roof terrace: adding 100 sqm of lifestyle value", excerpt: "How to transform a roof slab into an outdoor lounge, garden, or entertainment deck.", date: "Apr 28, 2026", category: "Lifestyle", img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "What diaspora buyers should know before investing in Kenya", excerpt: "Legal process, financing options, remote viewing, and title transfer explained.", date: "Apr 18, 2026", category: "Buyer Guide", img: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "Modern family homes: why 4 en‑suite bedrooms are the new standard", excerpt: "Privacy, guest accommodation, and the evolution of bedroom planning.", date: "Apr 10, 2026", category: "Design", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "The cost of building vs buying a turnkey residence in 2026", excerpt: "Comparing timelines, price volatility, and the value of a finished home.", date: "Apr 2, 2026", category: "Investment", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", link: "#" },
+      { title: "Landscape design for flat‑roof homes: native plants & hardscaping", excerpt: "Low‑maintenance gardens that complement modern architecture.", date: "Mar 25, 2026", category: "Outdoor", img: "https://images.unsplash.com/photo-1618219740975-4091bb63b46f?auto=format&fit=crop&w=800&q=80", link: "#" }
+    ];
+
+    const postsPerPage = 6;
+    let currentPage = 1;
+    let filteredPosts = [...allPosts];
+    let searchTerm = "";
+
+    function renderBlog() {
+      const start = (currentPage - 1) * postsPerPage;
+      const paginated = filteredPosts.slice(start, start + postsPerPage);
+      const grid = document.getElementById("blogGrid");
+      if (!grid) return;
+      if (paginated.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px;"><p>No articles match your search. Try another keyword.</p></div>`;
+        return;
+      }
+      grid.innerHTML = paginated.map(post => `
+        <article class="blog-card" data-reveal>
+          <img class="blog-img" src="${post.img}" alt="${post.title}" loading="lazy">
+          <div class="blog-content">
+            <div class="blog-meta"><span class="category">${post.category}</span><span>${post.date}</span></div>
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+            <a href="${post.link}" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      `).join("");
+      // re-trigger reveal animation
+      document.querySelectorAll("[data-reveal]").forEach(el => el.classList.remove("visible"));
+      const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }), { threshold: .15 });
+      document.querySelectorAll("[data-reveal]").forEach(el => observer.observe(el));
+    }
+
+    function renderPagination() {
+      const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+      const container = document.getElementById("paginationContainer");
+      if (!container) return;
+      if (totalPages <= 1) { container.innerHTML = ""; return; }
+      let buttons = `<button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" data-page="prev"><i class="fas fa-chevron-left"></i></button>`;
+      for (let i = 1; i <= totalPages; i++) {
+        buttons += `<button class="page-btn ${currentPage === i ? 'active' : ''}" data-page="${i}">${i}</button>`;
+      }
+      buttons += `<button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" data-page="next"><i class="fas fa-chevron-right"></i></button>`;
+      container.innerHTML = buttons;
+
+      container.querySelectorAll(".page-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          if (btn.classList.contains("disabled")) return;
+          const page = btn.dataset.page;
+          if (page === "prev") currentPage = Math.max(1, currentPage - 1);
+          else if (page === "next") currentPage = Math.min(totalPages, currentPage + 1);
+          else currentPage = parseInt(page, 10);
+          renderBlog();
+          renderPagination();
+          window.scrollTo({ top: document.querySelector(".blog-grid").offsetTop - 80, behavior: "smooth" });
+        });
+      });
+    }
+
+    function updateSearch() {
+      searchTerm = document.getElementById("searchInput")?.value.trim().toLowerCase() || "";
+      filteredPosts = allPosts.filter(post => post.title.toLowerCase().includes(searchTerm) || post.excerpt.toLowerCase().includes(searchTerm));
+      currentPage = 1;
+      renderBlog();
+      renderPagination();
+    }
+
+    renderBlog();
+    renderPagination();
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) searchInput.addEventListener("input", updateSearch);
+
+    // ==================== NAVBAR SCROLL LOGIC (hide on down, show on up) ====================
+    const navbar = document.getElementById("navbar");
+    const progress = document.getElementById("siteProgress");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobilePanel = document.getElementById("mobilePanel");
+    const mobileClose = document.getElementById("mobileClose");
+    const scrim = document.getElementById("scrim");
+    let lastScrollY = window.scrollY;
+
+    function updateScrollUI() {
+      const scrollTop = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = max > 0 ? (scrollTop / max) * 100 : 0;
+      navbar.classList.toggle("scrolled", scrollTop > 24);
+      progress.style.width = `${percent}%`;
+      const scrollingDown = scrollTop > lastScrollY;
+      const pastHero = scrollTop > 120;
+      if (scrollingDown && pastHero && !document.body.classList.contains("menu-open")) {
+        navbar.classList.add("nav-hidden");
+      } else {
+        navbar.classList.remove("nav-hidden");
+      }
+      lastScrollY = Math.max(scrollTop, 0);
+    }
+    window.addEventListener("scroll", updateScrollUI, { passive: true });
+    updateScrollUI();
+
+    // ==================== MOBILE MENU ====================
+    function openMenu() { document.body.classList.add("menu-open"); mobilePanel.classList.add("open"); scrim.classList.add("open"); scrim.hidden = false; menuToggle.setAttribute("aria-expanded", "true"); menuToggle.classList.add("is-open"); }
+    function closeMenu() { document.body.classList.remove("menu-open"); mobilePanel.classList.remove("open"); scrim.classList.remove("open"); menuToggle.setAttribute("aria-expanded", "false"); menuToggle.classList.remove("is-open"); setTimeout(() => { if (!document.body.classList.contains("menu-open")) scrim.hidden = true; }, 250); }
+    menuToggle.addEventListener("click", openMenu);
+    mobileClose.addEventListener("click", closeMenu);
+    scrim.addEventListener("click", closeMenu);
+    mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+
+    // ==================== MODAL HANDLING ====================
+    function openModal(id) { const modal = document.getElementById(id); if (modal) { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.classList.add("modal-open"); } }
+    function closeModal(modal) { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); if (!document.querySelector(".modal.open")) document.body.classList.remove("modal-open"); }
+    document.querySelectorAll("[data-open-modal]").forEach(trigger => trigger.addEventListener("click", e => { e.preventDefault(); openModal(trigger.dataset.openModal); }));
+    document.querySelectorAll("[data-close-modal]").forEach(btn => btn.addEventListener("click", () => closeModal(btn.closest(".modal"))));
+    document.querySelectorAll(".modal").forEach(modal => modal.addEventListener("click", e => { if (e.target === modal) closeModal(modal); }));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") { document.querySelectorAll(".modal.open").forEach(closeModal); if (mobilePanel.classList.contains("open")) closeMenu(); } });
+
+    // ==================== FORM SUBMISSION (WhatsApp + email) ====================
+    const leadForm = document.getElementById("leadForm");
+    const formNote = document.getElementById("formNote");
+    const whatsappNumber = "254722414994";
+    const businessEmail = "elysiaolonana@gmail.com";
+    leadForm?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const buyerType = document.getElementById("buyerType")?.value || "";
+      const date = document.getElementById("date")?.value || "";
+      const msg = document.getElementById("message").value.trim();
+      if (!name || !phone || !email) { formNote.textContent = "Please complete all fields."; return; }
+      const plain = `New inquiry from blog\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBuyer type: ${buyerType}\nPreferred date: ${date}\nMessage: ${msg}`;
+      const encoded = encodeURIComponent(plain);
+      formNote.textContent = "Opening WhatsApp and preparing email...";
+      window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+      setTimeout(() => window.location.href = `mailto:${businessEmail}?subject=Blog%20inquiry&body=${encoded}`, 650);
+    });
+
+    // ==================== REVEAL ANIMATION (Intersection Observer) ====================
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }), { threshold: .15 });
+    document.querySelectorAll("[data-reveal]").forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener("click", e => { const target = document.querySelector(anchor.getAttribute("href")); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); closeMenu(); } }));
+  })();
+</script>
+</body>
+</html>
