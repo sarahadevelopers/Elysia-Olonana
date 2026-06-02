@@ -439,6 +439,87 @@
     text-align: center;
   }
 }
+/* ===== PREMIUM MOBILE HERO BUTTONS: SIDE BY SIDE ===== */
+@media (max-width: 620px) {
+  .hero-project .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    margin: 24px auto 0;
+  }
+
+  .hero-project .hero-actions .btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 10px;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+
+  .hero-project .hero-actions .btn.filled {
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    color: var(--purple-deep);
+    border-color: transparent;
+    box-shadow: 0 14px 32px rgba(227,188,108,.22);
+  }
+
+  .hero-project .hero-actions .btn.light {
+    background: rgba(255,255,255,.08);
+    color: var(--gold-soft);
+    border-color: rgba(227,188,108,.42);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-project .hero-actions .btn:hover,
+  .hero-project .hero-actions .btn:focus-visible {
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 360px) {
+  .hero-project .hero-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.trust-item i {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--gold);
+}
+
+/* Mobile layout: 2x2 grid for better spacing */
+@media (max-width: 620px) {
+  .trust-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 300px;
+    margin: 16px auto 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -483,8 +564,23 @@
         <a class="btn light" href="#summary">See details</a>
       </div>
       <div class="trust-strip">
-        <span>Freehold title</span><span>KSh 23M guide price</span><span>Private viewing</span><span>Diaspora support</span>
-      </div>
+  <div class="trust-item">
+    <i class="fas fa-certificate"></i>
+    <span>Freehold title</span>
+  </div>
+  <div class="trust-item">
+    <i class="fas fa-money-bill-wave"></i>
+    <span>KSh 23M guide price</span>
+  </div>
+  <div class="trust-item">
+    <i class="fas fa-user-secret"></i>
+    <span>Private viewing</span>
+  </div>
+  <div class="trust-item">
+    <i class="fas fa-globe-africa"></i>
+    <span>Diaspora support</span>
+  </div>
+</div>
     </div>
   </section>
 
