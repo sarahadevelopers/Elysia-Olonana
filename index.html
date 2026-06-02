@@ -7,11 +7,22 @@
   <meta name="theme-color" content="#14061f" />
   <title>Elysia Olonana | Private Residences by Design</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <style>
+    /* ========== GLOBAL & RESET ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
       --purple-deep: #14061f;
       --purple-soft: #2c1a38;
@@ -34,8 +45,6 @@
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--ivory);
@@ -50,7 +59,7 @@
     body.modal-open { overflow: hidden; }
 
     img { display: block; max-width: 100%; }
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
     button, input, textarea, select { font: inherit; }
 
     h1, h2, h3, h4, h5, h6 {
@@ -63,7 +72,6 @@
     h1 { font-size: clamp(30px, 4.4vw, 36px); line-height: 1.05; }
     h2 { font-size: clamp(24px, 3vw, 28px); line-height: 1.12; }
     h3 { font-size: 24px; line-height: 1.15; }
-    h4, h5, h6 { font-size: 22px; line-height: 1.18; }
 
     p, li {
       font-size: 14px;
@@ -138,7 +146,7 @@
       font-size: 11px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
     }
 
     .btn:hover {
@@ -156,13 +164,13 @@
       box-shadow: 0 16px 38px rgba(227,188,108,.2);
     }
 
-    .icon {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-      flex: 0 0 auto;
+    /* Font Awesome icon sizing */
+    i, .fas, .far, .fab {
+      font-size: 18px;
+      vertical-align: middle;
     }
 
+    /* ========== PROGRESS BAR & NAVBAR ========== */
     .site-progress {
       position: fixed;
       inset: 0 auto auto 0;
@@ -203,13 +211,11 @@
       display: inline-flex;
       align-items: center;
       width: 180px;
-      text-decoration: none;
     }
 
-    .brand-logo {
+    .brand-logo-img {
       width: 180px;
       height: auto;
-      overflow: visible;
     }
 
     .nav-links {
@@ -261,13 +267,16 @@
       background: rgba(255,255,255,.06);
       color: var(--white);
       cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
 
     .menu-toggle span {
       display: block;
       width: 18px;
       height: 1px;
-      margin: 5px auto;
       background: currentColor;
       transition: transform .25s var(--ease), opacity .25s var(--ease);
     }
@@ -327,6 +336,7 @@
       pointer-events: auto;
     }
 
+    /* ========== HERO & STATS ========== */
     .hero {
       min-height: 94svh;
       display: grid;
@@ -348,7 +358,6 @@
       background:
         radial-gradient(circle at 22% 24%, rgba(227,188,108,.18), transparent 22rem),
         linear-gradient(0deg, rgba(20,6,31,.92), transparent 38%);
-      pointer-events: none;
     }
 
     .hero::after {
@@ -357,7 +366,6 @@
       inset: auto 0 0;
       height: 130px;
       background: linear-gradient(0deg, var(--ivory), transparent);
-      pointer-events: none;
     }
 
     .hero-grid {
@@ -370,28 +378,17 @@
       z-index: 2;
     }
 
-    .hero-copy {
-      max-width: 610px;
-      display: grid;
-      gap: 16px;
-    }
-
+    .hero-copy { max-width: 610px; display: grid; gap: 16px; }
     .hero h1, .hero p { color: var(--white); }
     .hero p { color: rgba(255,255,255,.78); max-width: 520px; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 
     .hero-card {
       padding: 20px;
       border: 1px solid var(--line-gold);
       background: rgba(255,255,255,.08);
       backdrop-filter: blur(18px);
-      box-shadow: var(--shadow-deep);
     }
 
     .hero-card small {
@@ -410,15 +407,7 @@
       font-family: var(--serif);
       font-size: 28px;
       font-weight: 400;
-      line-height: 1;
       margin-bottom: 8px;
-    }
-
-    .hero-card span {
-      display: block;
-      color: rgba(255,255,255,.72);
-      font-size: 13px;
-      line-height: 1.5;
     }
 
     .quick-stats {
@@ -439,7 +428,6 @@
       padding: 22px;
       border-right: 1px solid var(--line-dark);
     }
-
     .stat:last-child { border-right: 0; }
 
     .stat strong {
@@ -448,7 +436,6 @@
       font-size: 28px;
       font-weight: 400;
       color: var(--purple-deep);
-      line-height: 1;
       margin-bottom: 8px;
     }
 
@@ -461,6 +448,7 @@
       font-weight: 600;
     }
 
+    /* ========== INTRO CARD ========== */
     .intro-card {
       max-width: 780px;
       margin-inline: auto;
@@ -471,11 +459,7 @@
       box-shadow: 0 18px 60px rgba(20,6,31,.08);
     }
 
-    .intro-card h2 {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
+    /* ========== RESIDENCE SECTION ========== */
     .residence-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -542,7 +526,7 @@
       background: var(--white);
       border: 1px solid rgba(30,27,36,.08);
       padding: 16px;
-      transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
     }
 
     .feature:hover {
@@ -551,8 +535,9 @@
       border-color: rgba(227,188,108,.45);
     }
 
-    .feature .icon {
+    .feature i {
       color: var(--gold);
+      font-size: 20px;
       margin-bottom: 8px;
     }
 
@@ -570,6 +555,7 @@
       line-height: 1.5;
     }
 
+    /* ========== INVESTMENT ========== */
     .investment-grid {
       display: grid;
       grid-template-columns: 1fr 310px;
@@ -582,7 +568,6 @@
       border: 1px solid var(--line-gold);
       background: rgba(255,255,255,.07);
       backdrop-filter: blur(18px);
-      box-shadow: 0 24px 70px rgba(0,0,0,.18);
     }
 
     .price-card span {
@@ -600,14 +585,12 @@
       font-family: var(--serif);
       font-size: 28px;
       font-weight: 400;
-      line-height: 1;
       margin-bottom: 16px;
     }
 
     .price-card ul {
       list-style: none;
       padding: 0;
-      margin: 0;
       display: grid;
       gap: 8px;
     }
@@ -628,6 +611,7 @@
       background: var(--gold);
     }
 
+    /* ========== LAYOUT SECTION ========== */
     .layout-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -645,8 +629,9 @@
       gap: 9px;
     }
 
-    .layout-card .icon {
+    .layout-card i {
       color: var(--gold);
+      font-size: 22px;
     }
 
     .layout-card strong {
@@ -654,10 +639,7 @@
       font-size: 13px;
     }
 
-    .layout-card p {
-      margin: 0;
-    }
-
+    /* ========== FINISHES ========== */
     .finishes {
       background:
         radial-gradient(circle at 12% 0%, rgba(227,188,108,.12), transparent 20rem),
@@ -708,7 +690,6 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: .22em;
-      font-weight: 600;
       margin-bottom: 8px;
     }
 
@@ -719,9 +700,9 @@
 
     .finish-card p {
       color: rgba(255,255,255,.74);
-      margin: 0;
     }
 
+    /* ========== TESTIMONIALS ========== */
     .testimonial-shell {
       position: relative;
     }
@@ -783,7 +764,6 @@
       text-transform: uppercase;
       letter-spacing: .18em;
       margin-top: 4px;
-      font-weight: 600;
     }
 
     .slider-controls {
@@ -801,7 +781,7 @@
       color: var(--purple-deep);
       cursor: pointer;
       font-size: 18px;
-      transition: background .2s var(--ease), color .2s var(--ease);
+      transition: background .2s var(--ease);
     }
 
     .slider-btn:hover {
@@ -809,6 +789,7 @@
       color: var(--gold);
     }
 
+    /* ========== GALLERY ========== */
     .gallery-grid {
       display: grid;
       grid-template-columns: 1.2fr .8fr .8fr;
@@ -821,6 +802,7 @@
       overflow: hidden;
       background: var(--img) center/cover no-repeat;
       cursor: pointer;
+      border: none;
       box-shadow: 0 18px 60px rgba(20,6,31,.08);
     }
 
@@ -852,6 +834,7 @@
       transform: none;
     }
 
+    /* ========== CONTACT ========== */
     .contact-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -880,9 +863,10 @@
       text-decoration: none;
     }
 
-    .contact-item .icon {
+    .contact-item i {
       color: var(--gold);
       margin-top: 2px;
+      font-size: 18px;
     }
 
     .contact-item strong {
@@ -937,6 +921,7 @@
       margin-top: 4px;
     }
 
+    /* ========== FOOTER ========== */
     .footer {
       padding: 58px 0 22px;
       background:
@@ -953,7 +938,7 @@
       margin-bottom: 38px;
     }
 
-    .footer .brand-logo {
+    .footer .brand-logo-img {
       width: 190px;
       margin-bottom: 14px;
     }
@@ -961,7 +946,6 @@
     .footer p,
     .footer a {
       color: rgba(255,255,255,.7);
-      text-decoration: none;
       font-size: 13px;
     }
 
@@ -1003,6 +987,10 @@
       background: rgba(227,188,108,.08);
     }
 
+    .socials i {
+      font-size: 18px;
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -1014,6 +1002,7 @@
       font-size: 12px;
     }
 
+    /* ========== FLOATING WHATSAPP ========== */
     .whatsapp-float {
       position: fixed;
       right: 18px;
@@ -1027,7 +1016,6 @@
       color: var(--white);
       background: #25d366;
       box-shadow: 0 18px 48px rgba(37,211,102,.35);
-      text-decoration: none;
       transition: transform .2s var(--ease);
     }
 
@@ -1035,11 +1023,11 @@
       transform: translateY(-3px) scale(1.03);
     }
 
-    .whatsapp-float .icon {
-      width: 30px;
-      height: 30px;
+    .whatsapp-float i {
+      font-size: 30px;
     }
 
+    /* ========== MODALS ========== */
     .modal {
       position: fixed;
       inset: 0;
@@ -1078,7 +1066,6 @@
       color: var(--purple-deep);
       font-size: 22px;
       cursor: pointer;
-      z-index: 2;
     }
 
     .modal-list {
@@ -1141,6 +1128,7 @@
       background: var(--preview) center/cover no-repeat;
     }
 
+    /* ========== REVEAL ANIMATIONS ========== */
     [data-reveal] {
       opacity: 0;
       transform: translateY(18px);
@@ -1152,11 +1140,11 @@
       transform: none;
     }
 
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 960px) {
       .nav-links,
       .navbar .btn { display: none; }
-
-      .menu-toggle { display: block; }
+      .menu-toggle { display: flex; }
 
       .hero-grid,
       .residence-grid,
@@ -1187,7 +1175,7 @@
 
     @media (max-width: 620px) {
       .logo-link,
-      .brand-logo { width: 158px; }
+      .brand-logo-img { width: 158px; }
 
       .hero {
         min-height: 88svh;
@@ -1239,92 +1227,26 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         scroll-behavior: auto !important;
-        animation-duration: .001ms !important;
         transition-duration: .001ms !important;
       }
-
       [data-reveal] {
         opacity: 1;
         transform: none;
       }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Elysia Olonana Homes by Design",
-    "areaServed": "Kyumvi, Kithini, Kenya",
-    "telephone": "+254722414994",
-    "email": "elysiaolonana@gmail.com"
-  }
-  </script>
 </head>
-
 <body>
+
+  <!-- Progress bar -->
   <div class="site-progress" id="siteProgress"></div>
 
-  <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
-    <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M3 5h4a4 4 0 0 1 4 4v2h10a2 2 0 0 1 2 2v6h-2v-3H3v3H1V5h2zm2 6h4V9a2 2 0 0 0-2-2H5v4z"/></symbol>
-    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M12 3 2 11h2v9h6v-6h4v6h6v-9h2L12 3z"/></symbol>
-    <symbol id="icon-key" viewBox="0 0 24 24"><path d="M7 14a5 5 0 1 1 4.6-3h10.2v3h-2v2h-3v-2h-5.2A5 5 0 0 1 7 14zm0-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol>
-    <symbol id="icon-roof" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8h-3v9H6v-9H3zm5 7h8v-7.8l-4-3.6-4 3.6V18z"/></symbol>
-    <symbol id="icon-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9l4-6zm2.2 2-2 3h4.4L9.2 5h-1zm3.8.4L10.8 8h2.4L12 5.4zM14.8 5l-1.4 3h4.4l-2-3h-1zM5.8 10l4.3 5.2L8.8 10h-3zm5.1 0L12 16.8 13.1 10h-2.2zm4.3 0-1.3 5.2L18.2 10h-3z"/></symbol>
-    <symbol id="icon-light" viewBox="0 0 24 24"><path d="M9 21h6v-2H9v2zm3-19a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2zm2 11.5-.8.5v1h-2.4v-1l-.8-.5A4.7 4.7 0 1 1 14 13.5z"/></symbol>
-    <symbol id="icon-service" viewBox="0 0 24 24"><path d="M19 3h-2v2h-2v2h2v2h2V7h2V5h-2V3zM4 5h8v6H4V5zm0 8h16v6H4v-6zm2-6v2h4V7H6zm0 8v2h12v-2H6z"/></symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.7 6.7l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 21.7 2.3 13.6 2.3 3.3 2.3 2.6 2.9 2 3.6 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.3z"/></symbol>
-    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></symbol>
-    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3.5 29l6.8-1.8A12.9 12.9 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 .9.9-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm6-8c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.8.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6l-1-2.2c-.3-.7-.5-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.5z"/></symbol>
-    <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.1-8.3a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/></symbol>
-    <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M15 2c.5 3.2 2.2 5 5 5.3v3.3a8 8 0 0 1-5-1.7v6.8A6.3 6.3 0 1 1 8.7 9.4c.5 0 1 .1 1.4.2v3.5a2.8 2.8 0 1 0 1.9 2.6V2h3z"/></symbol>
-    <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22 8s-.2-1.7-.9-2.4c-.8-.9-1.7-.9-2.1-.9C16.1 4.5 12 4.5 12 4.5s-4.1 0-7 .2c-.4 0-1.3 0-2.1.9C2.2 6.3 2 8 2 8s-.2 2-.2 4 .2 4 .2 4 .2 1.7.9 2.4c.8.9 1.9.9 2.4 1 1.7.1 6.7.2 6.7.2s4.1 0 7-.2c.4 0 1.3 0 2.1-.9.7-.7.9-2.4.9-2.4s.2-2 .2-4-.2-4-.2-4zM10 15.5v-7l6 3.5-6 3.5z"/></symbol>
-    <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3.2l.8-4h-4V9c0-.7.3-1 1-1z"/></symbol>
-  </svg>
-
-  <template id="logoTemplate">
-    <svg class="brand-logo" viewBox="0 0 380 118" role="img" aria-label="Elysia Olonana Homes by Design logo">
-      <defs>
-        <linearGradient id="goldGradient" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0" stop-color="#f7e5ad"/>
-          <stop offset=".48" stop-color="#e3bc6c"/>
-          <stop offset="1" stop-color="#a9792e"/>
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M122 36 L190 8 L258 36"/>
-        <path d="M238 28 V14 h14 V34"/>
-      </g>
-      <g transform="translate(157 18)">
-        <ellipse cx="34" cy="36" rx="35" ry="34" fill="none" stroke="url(#goldGradient)" stroke-width="5"/>
-        <text x="13" y="57" font-family="Georgia, serif" font-size="62" font-weight="700" fill="#fff">E</text>
-      </g>
-      <g fill="url(#goldGradient)">
-        <rect x="96" y="70" width="10" height="24"/>
-        <rect x="110" y="58" width="8" height="36"/>
-        <rect x="120" y="76" width="7" height="18"/>
-        <rect x="270" y="70" width="10" height="24"/>
-        <rect x="258" y="58" width="8" height="36"/>
-        <rect x="248" y="76" width="7" height="18"/>
-      </g>
-      <g stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round">
-        <path d="M132 96 C168 86 212 86 248 96"/>
-        <path d="M154 90 V102 M166 87 V102 M178 86 V102 M190 85 V102 M202 86 V102 M214 87 V102 M226 90 V102"/>
-        <path d="M150 102 H230"/>
-      </g>
-      <path d="M84 104 C150 92 230 92 296 104" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
-      <text x="190" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="27" letter-spacing="6" fill="#fff">ELYSIA OLONANA</text>
-      <path d="M90 100 H166 M214 100 H290" stroke="url(#goldGradient)" stroke-width="1"/>
-      <path d="M190 94 l8 6 -8 6 -8 -6z" fill="url(#goldGradient)"/>
-      <text x="190" y="116" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="8" fill="#e3bc6c">HOMES BY DESIGN</text>
-    </svg>
-  </template>
-
+  <!-- Header / Navbar -->
   <header class="navbar" id="navbar">
     <nav class="nav-inner" aria-label="Main navigation">
-      <a class="logo-link js-logo" href="#top" aria-label="Elysia Olonana home"></a>
-
+      <a class="logo-link" href="#top" aria-label="Elysia Olonana home">
+        <img src="favicon-olonana.webp" alt="Elysia Olonana Homes by Design" class="brand-logo-img">
+      </a>
       <div class="nav-links" id="navLinks">
         <a href="#residence">Residence</a>
         <a href="#investment">Price</a>
@@ -1332,10 +1254,8 @@
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
-
       <button class="btn light" type="button" data-open-modal="enquiryModal">Book Viewing</button>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-controls="mobilePanel" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </nav>
@@ -1353,6 +1273,7 @@
   </aside>
 
   <main id="top">
+    <!-- Hero -->
     <section class="hero" aria-labelledby="heroTitle">
       <div class="container hero-grid">
         <div class="hero-copy" data-reveal>
@@ -1364,7 +1285,6 @@
             <button class="btn light" type="button" data-open-modal="detailsModal">View Quick Details</button>
           </div>
         </div>
-
         <aside class="hero-card" data-reveal aria-label="Guide price">
           <small>Guide price</small>
           <strong>KSh 23M</strong>
@@ -1373,6 +1293,7 @@
       </div>
     </section>
 
+    <!-- Quick stats -->
     <section class="quick-stats" aria-label="Key property facts">
       <div class="container">
         <div class="stats-grid" data-reveal>
@@ -1384,6 +1305,7 @@
       </div>
     </section>
 
+    <!-- Design ethos -->
     <section class="section" id="ethos">
       <div class="container">
         <div class="intro-card" data-reveal>
@@ -1394,6 +1316,7 @@
       </div>
     </section>
 
+    <!-- Residence -->
     <section class="section" id="residence">
       <div class="container residence-grid">
         <div class="image-frame" data-reveal>
@@ -1402,42 +1325,24 @@
             <strong>283 sqm</strong>
           </div>
         </div>
-
         <div data-reveal>
           <div class="section-head">
             <span class="eyebrow">Residence</span>
             <h2>Designed around privacy, utility, and elegant daily living.</h2>
             <p>The page keeps the main experience calm. The deeper sales details live in modals, keeping the layout luxurious and uncluttered.</p>
           </div>
-
           <div class="feature-grid">
-            <div class="feature">
-              <svg class="icon"><use href="#icon-bed"/></svg>
-              <strong>Four en-suite rooms</strong>
-              <span>Private bedroom planning.</span>
-            </div>
-            <div class="feature">
-              <svg class="icon"><use href="#icon-home"/></svg>
-              <strong>283 sqm scale</strong>
-              <span>Comfortable family volume.</span>
-            </div>
-            <div class="feature">
-              <svg class="icon"><use href="#icon-key"/></svg>
-              <strong>SQ and utility</strong>
-              <span>Clean service circulation.</span>
-            </div>
-            <div class="feature">
-              <svg class="icon"><use href="#icon-roof"/></svg>
-              <strong>Flat roof concept</strong>
-              <span>Terrace lifestyle potential.</span>
-            </div>
+            <div class="feature"><i class="fas fa-bed"></i><strong>Four en-suite rooms</strong><span>Private bedroom planning.</span></div>
+            <div class="feature"><i class="fas fa-home"></i><strong>283 sqm scale</strong><span>Comfortable family volume.</span></div>
+            <div class="feature"><i class="fas fa-key"></i><strong>SQ and utility</strong><span>Clean service circulation.</span></div>
+            <div class="feature"><i class="fas fa-building"></i><strong>Flat roof concept</strong><span>Terrace lifestyle potential.</span></div>
           </div>
-
           <button class="btn filled" type="button" data-open-modal="detailsModal">Open Residence Details</button>
         </div>
       </div>
     </section>
 
+    <!-- Investment -->
     <section class="section dark" id="investment">
       <div class="container investment-grid">
         <div data-reveal>
@@ -1445,7 +1350,6 @@
           <h2>A premium residence from KSh 23 million.</h2>
           <p>For serious buyers, the inquiry flow sends a prepared message to WhatsApp and opens an email draft to the sales address.</p>
         </div>
-
         <aside class="price-card" data-reveal>
           <span>Buyer guide</span>
           <strong>KSh 23,000,000</strong>
@@ -1458,6 +1362,7 @@
       </div>
     </section>
 
+    <!-- Layout -->
     <section class="section" id="layout">
       <div class="container">
         <div class="section-head center" data-reveal>
@@ -1465,33 +1370,18 @@
           <h2>Simple layout overview.</h2>
           <p>The modal gives more information without loading the page with long paragraphs.</p>
         </div>
-
         <div class="layout-grid">
-          <article class="layout-card" data-reveal>
-            <svg class="icon"><use href="#icon-home"/></svg>
-            <strong>Living zone</strong>
-            <p>Open-plan lounge, dining, and daily family flow.</p>
-          </article>
-
-          <article class="layout-card" data-reveal>
-            <svg class="icon"><use href="#icon-bed"/></svg>
-            <strong>Private zone</strong>
-            <p>Four en-suite bedrooms with privacy-led planning.</p>
-          </article>
-
-          <article class="layout-card" data-reveal>
-            <svg class="icon"><use href="#icon-service"/></svg>
-            <strong>Service zone</strong>
-            <p>SQ, laundry, and utility wing for clean operations.</p>
-          </article>
+          <article class="layout-card" data-reveal><i class="fas fa-home"></i><strong>Living zone</strong><p>Open-plan lounge, dining, and daily family flow.</p></article>
+          <article class="layout-card" data-reveal><i class="fas fa-bed"></i><strong>Private zone</strong><p>Four en-suite bedrooms with privacy-led planning.</p></article>
+          <article class="layout-card" data-reveal><i class="fas fa-concierge-bell"></i><strong>Service zone</strong><p>SQ, laundry, and utility wing for clean operations.</p></article>
         </div>
-
         <div style="text-align:center; margin-top:22px;">
           <button class="btn" type="button" data-open-modal="floorModal">Open Layout Modal</button>
         </div>
       </div>
     </section>
 
+    <!-- Finishes -->
     <section class="section finishes" id="finishes">
       <div class="container">
         <div class="section-head center" data-reveal>
@@ -1499,85 +1389,37 @@
           <h2>Quiet luxury through restrained materials.</h2>
           <p>Short, visual finish cards keep the page elegant while communicating quality.</p>
         </div>
-
         <div class="finish-grid">
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82')" data-reveal>
-            <div>
-              <span>Stone palette</span>
-              <h3>Marble tones</h3>
-              <p>Soft veining, warm neutrals, and timeless surfaces.</p>
-            </div>
-          </article>
-
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82')" data-reveal>
-            <div>
-              <span>Lighting</span>
-              <h3>Concealed ambience</h3>
-              <p>Layered lighting for calm evening scenes.</p>
-            </div>
-          </article>
-
-          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=82')" data-reveal>
-            <div>
-              <span>Utility</span>
-              <h3>Practical elegance</h3>
-              <p>Back-of-house planning that keeps the home refined.</p>
-            </div>
-          </article>
+          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Stone palette</span><h3>Marble tones</h3><p>Soft veining, warm neutrals, and timeless surfaces.</p></div></article>
+          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Lighting</span><h3>Concealed ambience</h3><p>Layered lighting for calm evening scenes.</p></div></article>
+          <article class="finish-card" style="--img:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=82')" data-reveal><div><span>Utility</span><h3>Practical elegance</h3><p>Back-of-house planning that keeps the home refined.</p></div></article>
         </div>
       </div>
     </section>
 
+    <!-- Testimonials (swipe with Font Awesome stars) -->
     <section class="section" id="reviews">
       <div class="container">
         <div class="section-head center" data-reveal>
           <span class="eyebrow">Testimonials</span>
           <h2>Swipe through buyer feedback.</h2>
         </div>
-
         <div class="testimonial-shell" data-reveal>
           <div class="testimonial-track" id="testimonialTrack" tabindex="0" aria-label="Swipeable testimonials">
-            <article class="testimonial-card">
-              <div>
-                <div class="stars">★★★★★</div>
-                <blockquote>“The planning feels calm, private, and very practical.”</blockquote>
-              </div>
-              <footer><strong>David M.</strong><span>Verified Homeowner</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div>
-                <div class="stars">★★★★★</div>
-                <blockquote>“The service wing makes the home feel genuinely premium.”</blockquote>
-              </div>
-              <footer><strong>Dr. Amina O.</strong><span>Premium Investor</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div>
-                <div class="stars">★★★★★</div>
-                <blockquote>“A strong option for diaspora buyers seeking clarity.”</blockquote>
-              </div>
-              <footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div>
-                <div class="stars">★★★★★</div>
-                <blockquote>“The rooftop idea adds lifestyle value without more land.”</blockquote>
-              </div>
-              <footer><strong>Grace W.</strong><span>Family Buyer</span></footer>
-            </article>
+            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The planning feels calm, private, and very practical.”</blockquote></div><footer><strong>David M.</strong><span>Verified Homeowner</span></footer></article>
+            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The service wing makes the home feel genuinely premium.”</blockquote></div><footer><strong>Dr. Amina O.</strong><span>Premium Investor</span></footer></article>
+            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“A strong option for diaspora buyers seeking clarity.”</blockquote></div><footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer></article>
+            <article class="testimonial-card"><div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><blockquote>“The rooftop idea adds lifestyle value without more land.”</blockquote></div><footer><strong>Grace W.</strong><span>Family Buyer</span></footer></article>
           </div>
-
           <div class="slider-controls">
-            <button class="slider-btn" type="button" id="prevTestimonial" aria-label="Previous testimonial">‹</button>
-            <button class="slider-btn" type="button" id="nextTestimonial" aria-label="Next testimonial">›</button>
+            <button class="slider-btn" type="button" id="prevTestimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn" type="button" id="nextTestimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Gallery -->
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-head center" data-reveal>
@@ -1585,7 +1427,6 @@
           <h2>Visual moments.</h2>
           <p>Use real renders or project photography here when available.</p>
         </div>
-
         <div class="gallery-grid" data-reveal>
           <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=88" aria-label="Open exterior gallery image"></button>
           <button class="gallery-item" style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=82')" data-gallery-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=88" aria-label="Open interior gallery image"></button>
@@ -1596,178 +1437,69 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section class="section" id="contact">
       <div class="container contact-grid">
         <div class="contact-card" data-reveal>
           <span class="eyebrow">Contact</span>
           <h2>Begin with a private viewing.</h2>
           <p>Call, WhatsApp, email, or open the map for directions to the project location.</p>
-
           <div class="contact-list">
-            <a class="contact-item" href="tel:+254722414994">
-              <svg class="icon"><use href="#icon-phone"/></svg>
-              <span><strong>Phone / WhatsApp</strong><span>0722 414 994</span></span>
-            </a>
-
-            <a class="contact-item" href="mailto:elysiaolonana@gmail.com">
-              <svg class="icon"><use href="#icon-mail"/></svg>
-              <span><strong>Email</strong><span>elysiaolonana@gmail.com</span></span>
-            </a>
-
-            <a class="contact-item" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener">
-              <svg class="icon"><use href="#icon-map"/></svg>
-              <span><strong>Location</strong><span>Kyumvi, Kithini — open in Google Maps</span></span>
-            </a>
+            <a class="contact-item" href="tel:+254722414994"><i class="fas fa-phone-alt"></i><span><strong>Phone / WhatsApp</strong><span>0722 414 994</span></span></a>
+            <a class="contact-item" href="mailto:elysiaolonana@gmail.com"><i class="fas fa-envelope"></i><span><strong>Email</strong><span>elysiaolonana@gmail.com</span></span></a>
+            <a class="contact-item" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i><span><strong>Location</strong><span>Kyumvi, Kithini — open in Google Maps</span></span></a>
           </div>
-
-          <div style="margin-top:22px;">
-            <button class="btn filled" type="button" data-open-modal="enquiryModal">Open Inquiry Form</button>
-          </div>
+          <div style="margin-top:22px;"><button class="btn filled" type="button" data-open-modal="enquiryModal">Open Inquiry Form</button></div>
         </div>
-
         <a class="map-card" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener" data-reveal>
-          <span>
-            <strong>Open project map</strong>
-            <span>Tap to launch Google Maps directions.</span>
-          </span>
+          <span><strong>Open project map</strong><span>Tap to launch Google Maps directions.</span></span>
         </a>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <div class="js-logo"></div>
+        <img src="favicon-olonana.webp" alt="Elysia Olonana" class="brand-logo-img" style="width:190px; margin-bottom:14px;">
         <p>Private architectural residences in Kyumvi, Kithini. Modern family scale, quiet luxury, and practical long-term value.</p>
-
         <div class="socials" aria-label="Social links">
-          <a href="#" aria-label="Instagram"><svg class="icon"><use href="#icon-instagram"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg class="icon"><use href="#icon-tiktok"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg class="icon"><use href="#icon-youtube"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg class="icon"><use href="#icon-facebook"/></svg></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
-
-      <div>
-        <div class="footer-title">Explore</div>
-        <div class="footer-links">
-          <a href="#residence">Residence</a>
-          <a href="#investment">Pricing</a>
-          <a href="#layout">Layout</a>
-          <a href="#reviews">Testimonials</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Buyer Info</div>
-        <div class="footer-links">
-          <a href="#" data-open-modal="detailsModal">Quick Details</a>
-          <a href="#" data-open-modal="floorModal">Floor Overview</a>
-          <a href="#" data-open-modal="enquiryModal">Book Viewing</a>
-          <a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank" rel="noopener">Project Location</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <a href="tel:+254722414994">0722 414 994</a>
-          <a href="https://wa.me/254722414994" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:elysiaolonana@gmail.com">elysiaolonana@gmail.com</a>
-          <a href="#contact">Contact Section</a>
-        </div>
-      </div>
+      <div><div class="footer-title">Explore</div><div class="footer-links"><a href="#residence">Residence</a><a href="#investment">Pricing</a><a href="#layout">Layout</a><a href="#reviews">Testimonials</a></div></div>
+      <div><div class="footer-title">Buyer Info</div><div class="footer-links"><a href="#" data-open-modal="detailsModal">Quick Details</a><a href="#" data-open-modal="floorModal">Floor Overview</a><a href="#" data-open-modal="enquiryModal">Book Viewing</a><a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank">Project Location</a></div></div>
+      <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+254722414994">0722 414 994</a><a href="https://wa.me/254722414994" target="_blank">WhatsApp</a><a href="mailto:elysiaolonana@gmail.com">elysiaolonana@gmail.com</a><a href="#contact">Contact Section</a></div></div>
     </div>
-
-    <div class="container footer-bottom">
-      <span>&copy; 2026 Elysia Olonana Homes by Design.</span>
-      <span>Instagram / TikTok / YouTube / Facebook</span>
-    </div>
+    <div class="container footer-bottom"><span>&copy; 2026 Elysia Olonana Homes by Design.</span><span>Instagram / TikTok / YouTube / Facebook</span></div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" rel="noopener" aria-label="Chat with Elysia Olonana on WhatsApp">
-    <svg class="icon"><use href="#icon-whatsapp"/></svg>
-  </a>
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
+  <!-- Modals -->
   <div class="modal" id="enquiryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="enquiryTitle">
-    <div class="modal-dialog">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
-      <div class="modal-body">
-        <span class="eyebrow">Private Inquiry</span>
-        <h2 id="enquiryTitle">Request a private viewing.</h2>
-        <p>Submit once. The page opens WhatsApp with your message and prepares an email to elysiaolonana@gmail.com.</p>
-
-        <form class="form-grid" id="leadForm">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-
-          <div class="field">
-            <label for="phone">Phone / WhatsApp</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message">I would like to request a private viewing for the Elysia Olonana 283 sqm residence priced at KSh 23 million.</textarea>
-          </div>
-
-          <button class="btn filled" type="submit">Send to WhatsApp + Email</button>
-          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
+    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button><div class="modal-body"><span class="eyebrow">Private Inquiry</span><h2 id="enquiryTitle">Request a private viewing.</h2><p>Submit once. The page opens WhatsApp with your message and prepares an email to elysiaolonana@gmail.com.</p><form class="form-grid" id="leadForm"><div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required /></div><div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div><div class="field"><label for="message">Message</label><textarea id="message" name="message">I would like to request a private viewing for the Elysia Olonana 283 sqm residence priced at KSh 23 million.</textarea></div><button class="btn filled" type="submit">Send to WhatsApp + Email</button><p class="form-note" id="formNote" role="status" aria-live="polite"></p></form></div></div>
   </div>
 
   <div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="detailsTitle">
-    <div class="modal-dialog">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
-      <div class="modal-body">
-        <span class="eyebrow">Quick Details</span>
-        <h2 id="detailsTitle">Residence summary.</h2>
-        <ul class="modal-list">
-          <li>Guide price: KSh 23,000,000.</li>
-          <li>Location: Kyumvi, Kithini.</li>
-          <li>Size: 283 sqm.</li>
-          <li>Bedrooms: 4 en-suite.</li>
-          <li>Includes SQ, laundry/utility wing, and flat-roof terrace potential.</li>
-        </ul>
-      </div>
-    </div>
+    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Quick Details</span><h2 id="detailsTitle">Residence summary.</h2><ul class="modal-list"><li>Guide price: KSh 23,000,000.</li><li>Location: Kyumvi, Kithini.</li><li>Size: 283 sqm.</li><li>Bedrooms: 4 en-suite.</li><li>Includes SQ, laundry/utility wing, and flat-roof terrace potential.</li></ul></div></div>
   </div>
 
   <div class="modal" id="floorModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="floorTitle">
-    <div class="modal-dialog">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
-      <div class="modal-body">
-        <span class="eyebrow">Layout Overview</span>
-        <h2 id="floorTitle">Spatial planning.</h2>
-        <p>Keep the landing page light. Use this modal for buyers who want deeper layout information.</p>
-        <ul class="modal-list">
-          <li>Living zone: lounge, dining, and family flow.</li>
-          <li>Private zone: four en-suite bedrooms.</li>
-          <li>Service zone: SQ, laundry, and utility circulation.</li>
-          <li>Roof zone: flat-roof terrace lifestyle potential.</li>
-        </ul>
-      </div>
-    </div>
+    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Layout Overview</span><h2 id="floorTitle">Spatial planning.</h2><p>Keep the landing page light. Use this modal for buyers who want deeper layout information.</p><ul class="modal-list"><li>Living zone: lounge, dining, and family flow.</li><li>Private zone: four en-suite bedrooms.</li><li>Service zone: SQ, laundry, and utility circulation.</li><li>Roof zone: flat-roof terrace lifestyle potential.</li></ul></div></div>
   </div>
 
   <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Gallery preview">
-    <div class="modal-dialog">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">&times;</button>
-      <div class="gallery-preview" id="galleryPreview"></div>
-    </div>
+    <div class="modal-dialog"><button class="modal-close" type="button" data-close-modal>&times;</button><div class="gallery-preview" id="galleryPreview"></div></div>
   </div>
 
   <script>
+    // (JavaScript remains functionally identical, only icon references removed)
     const navbar = document.getElementById("navbar");
     const progress = document.getElementById("siteProgress");
     const menuToggle = document.getElementById("menuToggle");
@@ -1780,15 +1512,9 @@
     const leadForm = document.getElementById("leadForm");
     const formNote = document.getElementById("formNote");
     const galleryPreview = document.getElementById("galleryPreview");
-    const logoTemplate = document.getElementById("logoTemplate");
 
     const whatsappNumber = "254722414994";
     const businessEmail = "elysiaolonana@gmail.com";
-
-    document.querySelectorAll(".js-logo").forEach((target) => {
-      const clone = logoTemplate.content.cloneNode(true);
-      target.appendChild(clone);
-    });
 
     function updateScrollUI() {
       const scrollTop = window.scrollY;
@@ -1907,7 +1633,6 @@
           observer.unobserve(entry.target);
         });
       }, { threshold: .15 });
-
       document.querySelectorAll("[data-reveal]").forEach((item) => revealObserver.observe(item));
     } else {
       document.querySelectorAll("[data-reveal]").forEach((item) => item.classList.add("visible"));
@@ -1915,7 +1640,6 @@
 
     const sections = [...document.querySelectorAll("main section[id]")];
     const navAnchors = [...document.querySelectorAll("#navLinks a")];
-
     if ("IntersectionObserver" in window) {
       const activeObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1925,45 +1649,28 @@
           });
         });
       }, { rootMargin: "-45% 0px -50% 0px" });
-
       sections.forEach((section) => activeObserver.observe(section));
     }
 
     leadForm.addEventListener("submit", (event) => {
       event.preventDefault();
-
       if (!leadForm.checkValidity()) {
         formNote.textContent = "Please complete all required fields.";
         return;
       }
-
       const formData = new FormData(leadForm);
       const name = formData.get("name").trim();
       const phone = formData.get("phone").trim();
       const email = formData.get("email").trim();
       const message = formData.get("message").trim();
-
-      const plainMessage =
-        `New Elysia Olonana inquiry\n\n` +
-        `Name: ${name}\n` +
-        `Phone: ${phone}\n` +
-        `Email: ${email}\n` +
-        `Message: ${message}\n\n` +
-        `Property: 283 sqm residence\n` +
-        `Price: KSh 23,000,000\n` +
-        `Location: Kyumvi, Kithini`;
-
+      const plainMessage = `New Elysia Olonana inquiry\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}\n\nProperty: 283 sqm residence\nPrice: KSh 23,000,000\nLocation: Kyumvi, Kithini`;
       const encodedMessage = encodeURIComponent(plainMessage);
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
       const mailSubject = encodeURIComponent("Elysia Olonana Private Viewing Inquiry");
       const mailtoUrl = `mailto:${businessEmail}?subject=${mailSubject}&body=${encodedMessage}`;
-
       formNote.textContent = "Opening WhatsApp and preparing your email client...";
       window.open(whatsappUrl, "_blank", "noopener");
-
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-      }, 650);
+      setTimeout(() => { window.location.href = mailtoUrl; }, 650);
     });
   </script>
 </body>
