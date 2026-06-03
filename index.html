@@ -67,8 +67,8 @@
 </a>
 <div class="nav-links" id="navLinks">
 <a class="active" href="index.html">Home</a>
-<a href="project.html">Residence</a>
-<a href="blog.html">Journal</a>
+<a href="project.html">Project Details</a>
+<a href="blog.html">Property Insights</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </div>
@@ -82,51 +82,111 @@
 <aside aria-hidden="true" class="mobile-panel" id="mobilePanel">
 <button aria-label="Close menu" class="mobile-close" id="mobileClose">×</button>
 <a href="index.html">Home</a>
-<a href="project.html">Residence</a>
-<a href="blog.html">Journal</a>
+<a href="project.html">Project Details</a>
+<a href="blog.html">Property Insights</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </aside>
 <main>
 <section class="hero" id="top">
-<div class="container">
-<div class="hero-copy" data-reveal="">
-<span class="eyebrow">Kyumvi, Kithini</span>
-<h1>A private 283 sqm family home in Kyumvi.</h1>
-<p>Four en-suite bedrooms, staff room, laundry area, rooftop terrace space, and a clear buying process from KSh 23M.</p>
-<div class="hero-actions">
-<button class="btn filled" data-open-modal="enquiryModal" type="button">Book a Viewing</button>
-<a class="btn light" href="project.html">View Residence</a>
-<a class="hero-text-link" href="#gallery">See Photos →</a>
-</div>
-<div aria-label="Key buyer points" class="trust-strip">
-<span class="trust-badge"><svg class="icon"><use href="#icon-key"></use></svg><em>Freehold title</em></span>
-<span class="trust-badge"><svg class="icon"><use href="#icon-check"></use></svg><em>KSh 23M guide</em></span>
-<span class="trust-badge"><svg class="icon"><use href="#icon-home"></use></svg><em>Private viewing</em></span>
-<span class="trust-badge"><svg class="icon"><use href="#icon-whatsapp"></use></svg><em>Diaspora support</em></span>
-</div>
-</div>
-<aside aria-label="Quick price card" class="hero-card" data-reveal="">
-<small>Private release</small>
-<strong>KSh 23M</strong>
-<span>283 sqm • 4 en-suite bedrooms • staff room • rooftop terrace space.</span>
-<button class="btn filled hero-card-btn" data-open-modal="enquiryModal" type="button">Request Brochure</button>
-</aside>
-</div>
+  <!-- Hero Background Slider -->
+  <div class="hero-bg-slider" aria-hidden="true">
+    <div 
+      class="hero-bg-slide active" 
+      style="--hero-img:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=82')">
+    </div>
+    <div 
+      class="hero-bg-slide" 
+      style="--hero-img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1900&q=82')">
+    </div>
+    <div 
+      class="hero-bg-slide" 
+      style="--hero-img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1900&q=82')">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow">Homes By Design</span>
+      <h1>Elysia Olonana Phase I</h1>
+      <!-- <p class="hero-subtext">A modern family home with four en-suite bedrooms, staff room, laundry, and rooftop terrace — from KSh 23M.</p>
+ -->
+      <div class="hero-actions">
+        <button class="btn filled" data-open-modal="enquiryModal" type="button">Book a Viewing</button>
+        <a class="btn light" href="project.html">Project Details</a>
+        <a class="hero-text-link" href="#gallery">See Photos →</a>
+      </div>
+    </div>
+  </div>
 </section>
 <section aria-label="Quick property facts" class="quick-facts">
 <div class="container">
 <div class="facts-grid" data-reveal="">
 <div class="fact"><strong>283</strong><span>sqm built area</span></div>
 <div class="fact"><strong>4</strong><span>en-suite bedrooms</span></div>
-<div class="fact"><strong>SQ</strong><span>staff room</span></div>
+<div class="fact"><strong>DSQ</strong><span>Servant Quarters </span></div>
 <div class="fact"><strong>23M</strong><span>guide price</span></div>
 </div>
 </div>
 </section>
 <section class="section" id="overview">
 <div class="container overview-grid">
-<div class="overview-image" data-reveal=""></div>
+<div class="overview-media" data-reveal>
+  <div class="overview-slider" id="overviewSlider">
+    <button
+      class="overview-slide active"
+      type="button"
+      style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=82')"
+      data-gallery-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=88"
+      aria-label="Open living area image"
+    >
+      <span>Living area</span>
+    </button>
+
+    <button
+      class="overview-slide"
+      type="button"
+      style="--img:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=82')"
+      data-gallery-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=88"
+      aria-label="Open exterior image"
+    >
+      <span>Exterior view</span>
+    </button>
+
+    <button
+      class="overview-slide"
+      type="button"
+      style="--img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1100&q=82')"
+      data-gallery-img="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=88"
+      aria-label="Open kitchen image"
+    >
+      <span>Kitchen</span>
+    </button>
+
+    <button
+      class="overview-slide"
+      type="button"
+      style="--img:url('https://images.unsplash.com/photo-1618219740975-4091bb63b46f?auto=format&fit=crop&w=1100&q=82')"
+      data-gallery-img="https://images.unsplash.com/photo-1618219740975-4091bb63b46f?auto=format&fit=crop&w=1600&q=88"
+      aria-label="Open rooftop terrace image"
+    >
+      <span>Rooftop space</span>
+    </button>
+  </div>
+
+  <div class="overview-slider-ui">
+    <button class="overview-arrow" type="button" id="overviewPrev" aria-label="Previous overview image">‹</button>
+
+    <div class="overview-progress">
+      <span id="overviewCounter">01 / 04</span>
+      <div class="overview-progress-track">
+        <div class="overview-progress-fill" id="overviewProgressFill"></div>
+      </div>
+    </div>
+
+    <button class="overview-arrow" type="button" id="overviewNext" aria-label="Next overview image">›</button>
+  </div>
+</div>
 <div class="overview-copy" data-reveal="">
 <div class="section-head">
 <span class="eyebrow">Home Overview</span>
@@ -171,7 +231,7 @@
 </div>
 <div class="route-grid">
 <article class="route-card" data-reveal="" style="--route-img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=1000&amp;q=82')">
-<div><span>Residence</span><h3>Explore the home.</h3><p>Specs, floor plans, price, gallery, and FAQ.</p><a class="btn light" href="project.html">View Residence</a></div>
+<div><span>Project Details</span><h3>Explore the home.</h3><p>Specs, floor plans, price, gallery, and FAQ.</p><a class="btn light" href="project.html">View Residence</a></div>
 </article>
 <article class="route-card" data-reveal="" style="--route-img:url('https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&amp;fit=crop&amp;w=1000&amp;q=82')">
 <div><span>Journal</span><h3>Read buyer guides.</h3><p>Simple advice on design, location, payment, and due diligence.</p><a class="btn light" href="blog.html">Open Journal</a></div>
@@ -360,7 +420,7 @@
 <div class="footer-title">Explore</div>
 <div class="footer-links">
 <a href="index.html">Home</a>
-<a href="project.html">Residence</a>
+<a href="project.html">Project Details</a>
 <a href="blog.html">Journal</a>
 <a href="contact.html">Contact</a>
 </div>

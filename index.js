@@ -237,6 +237,107 @@ function setupScroller({ trackId, itemSelector, prevId, nextId, counterId, fillI
   updateUI();
 }
 
+// ===== OVERVIEW IMAGE SWIPER =====
+const overviewSlider = document.getElementById("overviewSlider");
+const overviewSlides = overviewSlider ? Array.from(overviewSlider.querySelectorAll(".overview-slide")) : [];
+const overviewPrev = document.getElementById("overviewPrev");
+const overviewNext = document.getElementById("overviewNext");
+const overviewCounter = document.getElementById("overviewCounter");
+const overviewProgressFill = document.getElementById("overviewProgressFill");
+// ===== HERO BACKGROUND SLIDER =====
+const heroSlides = Array.from(document.querySelectorAll(".hero-bg-slide"));
+let activeHeroSlide = 0;
+let heroSlideTimer = null;
+
+function showHeroSlide(index) {
+  if (!heroSlides.length) return;
+
+  heroSlides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
+
+function startHeroSlider() {
+  if (heroSlides.length <= 1) return;
+
+  heroSlideTimer = setInterval(() => {
+    activeHeroSlide = (activeHeroSlide + 1) % heroSlides.length;
+    showHeroSlide(activeHeroSlide);
+  }, 5000);
+}
+
+showHeroSlide(activeHeroSlide);
+startHeroSlider();
+
+let activeOverviewIndex = 0;
+
+function updateOverviewUI() {
+  if (!overviewSlides.length) return;
+
+  const total = overviewSlides.length;
+  const current = activeOverviewIndex + 1;
+
+  if (overviewCounter) {
+    overviewCounter.textContent = `${formatNumber(current)} / ${formatNumber(total)}`;
+  }
+
+  if (overviewProgressFill) {
+    overviewProgressFill.style.width = `${(current / total) * 100}%`;
+  }
+}
+
+function scrollOverviewTo(index) {
+  if (!overviewSlider || !overviewSlides.length) return;
+
+  activeOverviewIndex = Math.max(0, Math.min(index, overviewSlides.length - 1));
+
+  overviewSlider.scrollTo({
+    left: overviewSlider.clientWidth * activeOverviewIndex,
+    behavior: "smooth"
+  });
+
+  updateOverviewUI();
+}
+
+function syncOverviewOnScroll() {
+  if (!overviewSlider) return;
+
+  const width = overviewSlider.clientWidth;
+  if (!width) return;
+
+  activeOverviewIndex = Math.round(overviewSlider.scrollLeft / width);
+  activeOverviewIndex = Math.max(0, Math.min(activeOverviewIndex, overviewSlides.length - 1));
+
+  updateOverviewUI();
+}
+
+overviewPrev?.addEventListener("click", () => {
+  scrollOverviewTo(activeOverviewIndex - 1);
+});
+
+overviewNext?.addEventListener("click", () => {
+  scrollOverviewTo(activeOverviewIndex + 1);
+});
+
+overviewSlider?.addEventListener("scroll", () => {
+  window.requestAnimationFrame(syncOverviewOnScroll);
+}, { passive: true });
+
+overviewSlides.forEach((slide, index) => {
+  slide.addEventListener("click", () => {
+    activeOverviewIndex = index;
+    updateOverviewUI();
+
+    const img = slide.dataset.galleryImg;
+    if (!img || !galleryPreview) return;
+
+    galleryPreview.style.setProperty("--preview", "url('" + img + "')");
+    openModal("galleryModal");
+  });
+});
+
+updateOverviewUI();
+
 setupScroller({
   trackId: "homeGallery",
   itemSelector: ".gallery-item",

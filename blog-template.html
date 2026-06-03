@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="[Blog excerpt – change per post] – Read the full article on Elysia Olonana blog." />
+  <meta name="theme-color" content="#14061f" />
+  <title>[Blog Title] | Elysia Olonana Journal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Schema.org for BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[Blog Title – change]",
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]",
+    "author": {
+      "@type": "Organization",
+      "name": "Elysia Olonana Homes by Design"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Elysia Olonana Homes by Design",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "favicon-olonana.webp"
+      }
+    },
+    "image": "[Featured image URL]",
+    "description": "[Short excerpt]"
+  }
+  </script>
+<link rel="stylesheet" href="blog-template.css" />
+  
+</head>
+<body>
+
+<div class="site-progress" id="siteProgress"></div>
+
+<header class="navbar" id="navbar">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a class="logo-link" href="index.html" aria-label="Elysia Olonana home">
+      <img src="favicon-olonana.webp" alt="Elysia Olonana Homes" class="brand-logo-img">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="project.html">Project Details</a>
+      <a href="blog.html" class="active">Property Insights</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="btn light" type="button" data-open-modal="enquiryModal">Book Viewing</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="project.html">Project Details</a>
+  <a href="blog.html">Property Insights</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</aside>
+
+<main>
+  <!-- Post Hero -->
+  <section class="post-hero" style="background: linear-gradient(0deg, rgba(20,6,31,.92), rgba(20,6,31,.48)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
+    <div class="container" data-reveal>
+      <span class="eyebrow">Blog</span>
+      <h1>[Blog Post Title – Replace]</h1>
+      <div class="post-meta">
+        <span><i class="far fa-calendar-alt"></i> [Date, e.g. June 1, 2026]</span>
+        <span><i class="far fa-clock"></i> [Read time, e.g. 5 min read]</span>
+        <span><i class="far fa-folder"></i> [Category, e.g. Buyer Guide]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Content (replace with actual article) -->
+  <article class="blog-content-wrapper" data-reveal>
+    <p><strong>Introductory paragraph.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <h2>Heading 2 – Section Title</h2>
+    <p>Write your content here. Keep paragraphs short and scannable. Use bold for key points.</p>
+
+    <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=80" alt="Descriptive alt text">
+
+    <h3>Subheading (H3)</h3>
+    <p>More detailed information. Add lists, tips, or quotes as needed.</p>
+
+    <blockquote>“A meaningful quote or key takeaway from the article – can be highlighted in gold border.”</blockquote>
+
+    <p>Continue with the rest of the article. The template supports all standard HTML tags.</p>
+
+    <hr />
+
+    <p><strong>Conclusion:</strong> Summarize the article and invite readers to take action.</p>
+
+    <!-- CTA Buttons -->
+    <div class="blog-cta">
+      <a href="project.html" class="btn filled">View the 283 sqm Residence</a>
+      <button class="btn light" data-open-modal="enquiryModal">Book a viewing</button>
+    </div>
+  </article>
+
+  <!-- Contact Section (identical to homepage) -->
+  <section class="section" id="contact" style="padding: 60px 0;">
+    <div class="container contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div class="contact-card" style="background: var(--white); padding: 32px; border: 1px solid var(--line-dark);">
+        <span class="eyebrow">Contact us</span>
+        <h2>Book a private viewing</h2>
+        <div class="contact-actions" style="display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 16px;">
+          <a href="tel:+254722414994"><i class="fas fa-phone"></i> Call</a>
+          <a href="https://wa.me/254722414994" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <button data-open-modal="enquiryModal">Request viewing</button>
+        </div>
+        <p><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Kyumvi, Kithini (off Machakos Road)</p>
+        <p class="privacy-note" style="margin-top: 12px; font-size: 12px;">We only use your details to arrange a viewing or answer your questions.</p>
+      </div>
+      <div class="map-card" style="background: linear-gradient(0deg, rgba(20,6,31,.8), rgba(20,6,31,.3)); min-height: 280px; border-radius: 4px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.384742515405!2d37.193297!3d-1.535977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f855baaedb77f%3A0x66540358a1f98082!2sElysia%20Olonana!5e0!3m2!1sen!2ske!4v1780329111468!5m2!1sen!2ske" width="100%" height="100%" style="min-height:280px; border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="favicon-olonana.webp" alt="Elysia Olonana" class="brand-logo-img" style="width:160px; margin-bottom:14px;">
+      <p>Private family homes in Kyumvi, Kithini. Modern, quiet, and practical.</p>
+      <div class="socials"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+    </div>
+    <div><div class="footer-title">Explore</div><div class="footer-links"><a href="index.html">Home</a><a href="project.html">Residence</a><a href="blog.html">Journal</a><a href="about.html">About</a><a href="#contact">Contact</a></div></div>
+    <div><div class="footer-title">Info</div><div class="footer-links"><a href="#" data-open-modal="detailsModal">Quick details</a><a href="#" data-open-modal="floorModal">Floor plans</a><a href="#" data-open-modal="enquiryModal">Book viewing</a><a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank">Location map</a></div></div>
+    <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+254722414994">0722 414 994</a><a href="https://wa.me/254722414994" target="_blank">WhatsApp</a><a href="mailto:elysiaolonana@gmail.com">Email</a></div></div>
+  </div>
+  <div class="container footer-bottom"><span>&copy; 2026 Elysia Olonana Homes by Design.</span><span>Instagram / TikTok / YouTube / Facebook</span></div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="tel:+254722414994">Call</a>
+  <button type="button" data-open-modal="enquiryModal">Book visit</button>
+  <a href="https://wa.me/254722414994" target="_blank">WhatsApp</a>
+</div>
+<a class="whatsapp-float" href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Modals -->
+<div class="modal" id="enquiryModal" role="dialog" aria-modal="true">
+  <div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Request info</span><h2>Book a viewing or get the brochure</h2><form class="form-grid" id="leadForm"><div class="field"><label>Full name *</label><input id="name" name="name" type="text" required /></div><div class="field"><label>Phone / WhatsApp *</label><input id="phone" name="phone" type="tel" required /></div><div class="field"><label>Email *</label><input id="email" name="email" type="email" required /></div><div class="field"><label>Buyer type</label><select id="buyerType" name="buyerType"><option>Homeowner</option><option>Investor</option><option>Diaspora buyer</option><option>Agent</option></select></div><div class="field"><label>Preferred viewing date (optional)</label><input id="date" name="date" type="date" /></div><div class="field"><label>Message</label><textarea id="message" rows="3">I would like to receive the brochure and schedule a site viewing for the 283 sqm residence.</textarea></div><button class="btn filled" type="submit">Send request</button><p class="form-note" id="formNote"></p></form></div></div>
+</div>
+<div class="modal" id="detailsModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Quick details</span><h2>Home summary</h2><ul><li>Price: KSh 23,000,000</li><li>283 sqm, 4 en‑suite bedrooms</li><li>Staff room + laundry area</li><li>Flat roof with terrace space</li><li>Freehold title, ready to move in</li></ul></div></div></div>
+<div class="modal" id="floorModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Floor plans</span><h2>Layout overview</h2><img src="https://placehold.co/800x500/14061f/e3bc6c?text=Floor+Plan+Preview" alt="Floor plan" style="width:100%; margin-top: 16px;"></div></div></div>
+
+<script src="blog-template.js">
+  
+</script>
+</body>
+</html>
