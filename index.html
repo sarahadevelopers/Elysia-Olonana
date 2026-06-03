@@ -37,9 +37,10 @@
       "availability": "https://schema.org/InStock"
     },
     "telephone": "+254722414994",
-    "email": "elysiaolonana@gmail.com"
+    "email": "sales@elysiaolonana.com"
   }
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <link href="index.css" rel="stylesheet"/>
 </head>
 <body>
@@ -113,7 +114,7 @@
  -->
       <div class="hero-actions">
         <button class="btn filled" data-open-modal="enquiryModal" type="button">Book a Viewing</button>
-        <a class="btn light" href="project.html">Project Details</a>
+        <a class="btn light" href="project.html#summary">Project Details</a>
         <a class="hero-text-link" href="#gallery">See Photos →</a>
       </div>
     </div>
@@ -216,7 +217,7 @@
 </article>
 </div>
 <div class="hero-actions">
-<a class="btn filled" href="project.html">See Full Details</a>
+<a class="btn filled" href="project.html#summary">See Full Details</a>
 <button class="btn" data-open-modal="detailsModal" type="button">Quick Summary</button>
 </div>
 </div>
@@ -231,10 +232,10 @@
 </div>
 <div class="route-grid">
 <article class="route-card" data-reveal="" style="--route-img:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=1000&amp;q=82')">
-<div><span>Project Details</span><h3>Explore the home.</h3><p>Specs, floor plans, price, gallery, and FAQ.</p><a class="btn light" href="project.html">View Residence</a></div>
+<div><span>Project Details</span><h3>Explore the home.</h3><p>Specs, floor plans, price, gallery, and FAQ.</p><a class="btn light" href="project.html#plans">View Residence</a></div>
 </article>
 <article class="route-card" data-reveal="" style="--route-img:url('https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&amp;fit=crop&amp;w=1000&amp;q=82')">
-<div><span>Journal</span><h3>Read buyer guides.</h3><p>Simple advice on design, location, payment, and due diligence.</p><a class="btn light" href="blog.html">Open Journal</a></div>
+<div><span>Property Insights</span><h3>Read buyer guides.</h3><p>Simple advice on design, location, payment, and due diligence.</p><a class="btn light" href="blog.html">Open Journal</a></div>
 </article>
 <article class="route-card" data-reveal="" style="--route-img:url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=1000&amp;q=82')">
 <div><span>Private viewing</span><h3>Speak to us.</h3><p>Call, WhatsApp, email, or request a private site visit.</p><a class="btn light" href="contact.html">Contact Sales</a></div>
@@ -292,11 +293,29 @@
 </div>
 </div>
 </div>
-<aside class="price-card" data-reveal="">
-<span>Guide price</span>
-<strong>KSh 23,000,000</strong>
-<p>Get the full brochure, payment guide, and viewing options directly from the sales office.</p>
-<button class="btn filled" data-open-modal="enquiryModal" type="button">Request Brochure</button>
+<aside class="price-card brochure-card" data-reveal>
+  <span>Guide price</span>
+  <strong>KSh 23,000,000</strong>
+  <p>Download the full brochure with residence details, payment guide, floor plan notes, and viewing options.</p>
+
+  <div class="brochure-actions">
+    <a 
+      class="btn filled" 
+      href="docs/Elysia_Olonana_Brochure.pdf" 
+      target="_blank" 
+      rel="noopener"
+      download>
+      Download Brochure
+    </a>
+
+    <a 
+      class="brochure-preview-link" 
+      href="docs/Elysia_Olonana_Brochure.pdf" 
+      target="_blank" 
+      rel="noopener">
+      Open PDF →
+    </a>
+  </div>
 </aside>
 </div>
 </section>
@@ -357,17 +376,18 @@
 </div>
 </div>
 <div class="testimonial-track" id="homeTestimonialTrack">
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The layout is clear and practical for family life.”</blockquote></div><footer><strong>David M.</strong><span>Family Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The staff room and laundry area make daily life easier.”</blockquote></div><footer><strong>Amina O.</strong><span>Home Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The rooftop space is a strong lifestyle feature.”</blockquote></div><footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The price and next steps were explained without pressure.”</blockquote></div><footer><strong>Mercy A.</strong><span>Investor</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The home feels private, modern, and easy to maintain.”</blockquote></div><footer><strong>Kevin M.</strong><span>Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The team made it easy to understand the payment guide.”</blockquote></div><footer><strong>Grace W.</strong><span>Family Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“As a diaspora buyer, I liked the clear follow-up.”</blockquote></div><footer><strong>Brian K.</strong><span>Diaspora Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The site visit helped us picture the home properly.”</blockquote></div><footer><strong>Linda N.</strong><span>Home Buyer</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The freehold title and location gave us confidence.”</blockquote></div><footer><strong>Samuel T.</strong><span>Investor</span></footer></article>
-<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“It feels like a family home with investment value.”</blockquote></div><footer><strong>Wanjiru G.</strong><span>Family Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The design fits our family beautifully—every space flows perfectly.”</blockquote></div><footer><strong>David M.</strong><span>Family Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The extra rooms and laundry space bring total comfort to daily life.”</blockquote></div><footer><strong>Amina O.</strong><span>Home Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The rooftop view is stunning. It is our absolute favorite place to unwind.”</blockquote></div><footer><strong>Patrick N.</strong><span>Diaspora Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“Transparent pricing and zero pressure. A truly premium buying experience.”</blockquote></div><footer><strong>Mercy A.</strong><span>Investor</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“A beautiful, modern sanctuary that is effortless to live in and maintain.”</blockquote></div><footer><strong>Kevin M.</strong><span>Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The payment plans were clear, flexible, and fully tailored to us.”</blockquote></div><footer><strong>Grace W.</strong><span>Family Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“Buying from abroad was seamless thanks to their brilliant, clear updates.”</blockquote></div><footer><strong>Brian K.</strong><span>Diaspora Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>...“Seeing the property in person made us instantly fall in love with it.”</blockquote></div><footer><strong>Linda N.</strong><span>Home Buyer</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“The freehold title and prime location made this a secure, easy choice.”</blockquote></div><footer><strong>Samuel T.</strong><span>Investor</span></footer></article>
+<article class="testimonial-card"><div><div class="stars">★★★★★</div><blockquote>“It is more than a home; it is a beautiful legacy for our children.”</blockquote></div><footer><strong>Wanjiru G.</strong><span>Family Buyer</span></footer></article>
 </div>
+
 <div class="home-testimonial-progress"><div class="home-testimonial-progress-track"><div class="home-testimonial-progress-fill" id="homeTestimonialProgressFill"></div></div></div>
 </div>
 </div>
@@ -383,9 +403,9 @@
 <svg class="icon"><use href="#icon-phone"></use></svg>
 <span><strong>Call the sales office</strong><small>0722 414 994</small></span>
 </a>
-<a class="contact-item" href="mailto:elysiaolonana@gmail.com">
+<a class="contact-item" href="mailto:sales@elysiaolonana.com">
 <svg class="icon"><use href="#icon-mail"></use></svg>
-<span><strong>Email us</strong><small>elysiaolonana@gmail.com</small></span>
+<span><strong>Email us</strong><small>sales@elysiaolonana.com</small></span>
 </a>
 <a class="contact-item" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" rel="noopener" target="_blank">
 <svg class="icon"><use href="#icon-map"></use></svg>
@@ -397,57 +417,137 @@
 <a class="btn" href="contact.html">Contact Page</a>
 </div>
 </div>
-<a class="map-card" data-reveal="" href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" rel="noopener" target="_blank">
-<span><strong>Project location</strong><small>Open Google Maps for directions.</small></span>
-</a>
+<div class="map-card" data-reveal>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.384742515405!2d37.193297!3d-1.535977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f855baaedb77f%3A0x66540358a1f98082!2sElysia%20Olonana!5e0!3m2!1sen!2ske!4v1780329111468!5m2!1sen!2ske"
+    width="150%"
+    height="420"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
 </div>
+</div>
+
+
 </section>
 </main>
-<footer class="footer">
-<div class="container footer-grid">
-<div>
-<img alt="Elysia Olonana" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" src="favicon-olonana.webp"/>
-<span class="logo-fallback" style="display:none"><strong>ELYSIA</strong><span>Homes by Design</span></span>
-<p>Private family homes in Kyumvi, Kithini. Modern design, clear layouts, and practical long-term value.</p>
-<div aria-label="Social links" class="socials">
-<a aria-label="Instagram" href="#"><svg class="icon"><use href="#icon-instagram"></use></svg></a>
-<a aria-label="TikTok" href="#"><svg class="icon"><use href="#icon-tiktok"></use></svg></a>
-<a aria-label="YouTube" href="#"><svg class="icon"><use href="#icon-youtube"></use></svg></a>
-<a aria-label="Facebook" href="#"><svg class="icon"><use href="#icon-facebook"></use></svg></a>
-</div>
-</div>
-<div>
-<div class="footer-title">Explore</div>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="project.html">Project Details</a>
-<a href="blog.html">Journal</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Buyer Info</div>
-<div class="footer-links">
-<a href="project.html#summary">Quick Summary</a>
-<a href="project.html#plans">Floor Plans</a>
-<a href="project.html#investment">Price and Payment</a>
-<a data-open-modal="enquiryModal" href="#">Book Viewing</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Contact</div>
-<div class="footer-links">
-<a href="tel:+254722414994">0722 414 994</a>
-<a href="https://wa.me/254722414994" rel="noopener" target="_blank">WhatsApp</a>
-<a href="mailto:elysiaolonana@gmail.com">elysiaolonana@gmail.com</a>
-<a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" rel="noopener" target="_blank">Open Map</a>
-</div>
-</div>
-</div>
-<div class="container footer-bottom">
-<span>© 2026 Elysia Olonana Homes by Design.</span>
-<span>Instagram / TikTok / YouTube / Facebook</span>
-</div>
+<footer class="footer premium-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img
+        alt="Elysia Olonana"
+        class="brand-logo-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+        src="favicon-olonana.webp"
+      />
+
+      <span class="logo-fallback" style="display:none">
+        <strong>ELYSIA</strong>
+        <span>Homes by Design</span>
+      </span>
+
+      <p>
+        Quality family homes by Elysia Olonana. Modern design, open layouts, and excellent long-term value.
+      </p>
+
+      <div aria-label="Social links" class="socials footer-socials">
+        <a aria-label="Instagram" href="https://www.instagram.com/elysiaolonana/"><svg class="icon"><use href="#icon-instagram" ></use></svg></a>
+        <a aria-label="TikTok" href="https://www.tiktok.com/@elysiaolonana"><svg class="icon"><use href="#icon-tiktok"></use></svg></a>
+        <a aria-label="YouTube" href="https://www.youtube.com/channel/UCqydH_jYrw2do8qVEzzfn_g"><svg class="icon"><use href="#icon-youtube"></use></svg></a>
+        <a aria-label="Facebook" href="https://web.facebook.com/profile.php?id=61590251081164"><svg class="icon"><use href="#icon-facebook"></use></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-title">Explore</div>
+      <div class="footer-links premium-footer-links">
+        <a href="index.html">
+          <span class="footer-link-icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a href="project.html">
+          <span class="footer-link-icon"><i class="fas fa-building"></i></span>
+          <span>Project Details</span>
+        </a>
+
+        <a href="blog.html">
+          <span class="footer-link-icon"><i class="fas fa-pen-nib"></i></span>
+          <span>Property Insights</span>
+        </a>
+
+        <a href="contact.html">
+          <span class="footer-link-icon"><i class="fas fa-paper-plane"></i></span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-title">Buyer Info</div>
+      <div class="footer-links premium-footer-links">
+        <a href="project.html#summary">
+          <span class="footer-link-icon"><i class="fas fa-list-check"></i></span>
+          <span>Quick Summary</span>
+        </a>
+
+        <a href="project.html#plans">
+          <span class="footer-link-icon"><i class="fas fa-drafting-compass"></i></span>
+          <span>Floor Plans</span>
+        </a>
+
+        <a href="project.html#investment">
+          <span class="footer-link-icon"><i class="fas fa-coins"></i></span>
+          <span>Price and Payment</span>
+        </a>
+
+        <a data-open-modal="enquiryModal" href="#">
+          <span class="footer-link-icon"><i class="fas fa-calendar-check"></i></span>
+          <span>Book Viewing</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-title">Contact</div>
+      <div class="footer-links premium-footer-links contact-footer-links">
+        <a href="tel:+254722414994">
+          <span class="footer-link-icon"><i class="fas fa-phone-alt"></i></span>
+          <span>0722 414 994</span>
+        </a>
+
+        <a href="https://wa.me/254722414994" rel="noopener" target="_blank">
+          <span class="footer-link-icon"><i class="fab fa-whatsapp"></i></span>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="mailto:sales@elysiaolonana.com">
+          <span class="footer-link-icon"><i class="fas fa-envelope"></i></span>
+          <span>sales@elysiaolonana.com</span>
+        </a>
+
+        <a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" rel="noopener" target="_blank">
+          <span class="footer-link-icon"><i class="fas fa-map-marker-alt"></i></span>
+          <span>Open Map</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom premium-footer-bottom">
+    <span>© 2026 Elysia Olonana Homes by Design.</span>
+    <span>
+      Designed & Developed by
+      <a
+        href="https://sarahadevelopers.co.ke"
+        target="_blank"
+        rel="noopener"
+      >
+        Saraha Developers
+      </a>
+    </span>
+  </div>
 </footer>
 <div class="mobile-cta-bar">
 <a href="tel:+254722414994">Call</a>

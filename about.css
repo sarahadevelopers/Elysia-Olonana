@@ -383,3 +383,118 @@
     [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
     [data-reveal].visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } }
+    /* ===== PREMIUM FOOTER UPGRADE ===== */
+.premium-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(227,188,108,.1), transparent 18rem),
+    radial-gradient(circle at 88% 8%, rgba(244,220,161,.08), transparent 20rem);
+  pointer-events: none;
+}
+
+.premium-footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand p {
+  max-width: 280px;
+}
+
+.premium-footer-links {
+  gap: 10px;
+}
+
+.premium-footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  line-height: 1.35;
+  transition:
+    color .22s var(--ease),
+    transform .22s var(--ease);
+}
+
+.premium-footer-links a:hover {
+  color: var(--gold-soft);
+  transform: translateX(3px);
+}
+
+.footer-link-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  border: 1px solid rgba(227,188,108,.22);
+  color: var(--gold-soft);
+  background: rgba(255,255,255,.035);
+  border-radius: 999px;
+  transition:
+    background .22s var(--ease),
+    border-color .22s var(--ease),
+    color .22s var(--ease);
+}
+
+.premium-footer-links a:hover .footer-link-icon {
+  background: rgba(227,188,108,.12);
+  border-color: rgba(227,188,108,.48);
+  color: var(--gold);
+}
+
+.footer-link-icon i {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.contact-footer-links a {
+  max-width: 100%;
+}
+
+.contact-footer-links a span:last-child {
+  overflow-wrap: anywhere;
+}
+
+.footer-socials a {
+  border-radius: 999px;
+}
+
+.premium-footer-bottom a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244,220,161,.55);
+  padding-bottom: 2px;
+  transition: color .22s var(--ease), border-color .22s var(--ease);
+}
+
+.premium-footer-bottom a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 760px) {
+  .premium-footer-links a {
+    width: 100%;
+    min-height: 38px;
+  }
+
+  .footer-link-icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
