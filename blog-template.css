@@ -339,3 +339,105 @@
     max-width: 100%;
   }
 }
+
+/* ===== CONTACT SECTION (added for blog pages) ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 0;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 32px;
+  border: 1px solid var(--line-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.map-card {
+  background: linear-gradient(0deg, rgba(20,6,31,.8), rgba(20,6,31,.3));
+  min-height: 280px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border: 0;
+  display: block;
+}
+
+.privacy-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted-dark);
+}
+
+/* Mobile stack: contact card first, map below */
+@media (max-width: 760px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+/* ===== LUXURY BLOG CTA BUTTONS - FORCE DARK TEXT ===== */
+.blog-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 48px 0 40px;
+}
+
+.blog-cta .btn {
+  min-width: 200px;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--purple-deep) !important; /* force dark text for all */
+}
+
+/* First button (filled) – gold background */
+.blog-cta .btn.filled {
+  background: var(--gold);
+  border: 1px solid var(--gold);
+}
+.blog-cta .btn.filled:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(227,188,108,0.3);
+}
+
+/* Second and third buttons (light) – gold border */
+.blog-cta .btn.light {
+  background: transparent;
+  border: 1px solid var(--gold);
+}
+.blog-cta .btn.light:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(227,188,108,0.2);
+}
+
+/* Mobile full width */
+@media (max-width: 640px) {
+  .blog-cta .btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
