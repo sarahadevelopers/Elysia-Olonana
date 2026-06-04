@@ -441,3 +441,19 @@
     min-width: unset;
   }
 }
+/* Contact section (mobile stacking) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Force dark text on blog CTA buttons */
+.blog-cta .btn,
+.blog-cta .btn.light,
+.blog-cta .btn.filled {
+  color: var(--purple-deep) !important;
+}
