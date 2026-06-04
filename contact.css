@@ -371,3 +371,36 @@
     max-width: 100%;
   }
 }
+/* Make footer social icons inherit the gold color from their parent link */
+.footer-socials svg.icon,
+.footer-socials svg.icon use {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Ensure the anchor has the gold color */
+.footer-socials a {
+  color: var(--gold-soft);
+}
+/* Fix footer social icon sizing and color */
+.footer-socials .icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  fill: currentColor;
+  stroke: none;
+}
+
+.footer-socials svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-socials a {
+  color: var(--gold-soft);
+  transition: color 0.2s;
+}
+
+.footer-socials a:hover {
+  color: var(--gold);
+}
