@@ -67,89 +67,94 @@
 <main>
   <!-- Contact Hero -->
   <section class="contact-hero">
-    <div class="container" data-reveal>
-      <span class="eyebrow">Private Office</span>
-      <h1>Private viewings by appointment</h1>
-      <p>Schedule a discreet site visit, request the buyer dossier, or speak directly with our residential team.</p>
-    </div>
-  </section>
+  <div class="container" data-reveal>
+    <span class="eyebrow">Contact Sales</span>
+    <h1>Schedule your site visit.</h1>
+    <p>Connect with our residential team to book an on-site tour or request the full project brochure.</p>
+  </div>
+</section>
 
   <!-- Trust strip -->
   <div class="container contact-trust-strip">
-    <span>Private viewing</span>
-    <span>Buyer dossier</span>
+    <span>On-Site Tours</span>
+    <span>Instant PDF Brochure</span>
     <span>Location guidance</span>
     <span>24‑hour response</span>
   </div>
 
   <!-- Contact Cards -->
   <div class="container">
-    <div class="contact-cards">
-      <div class="contact-info-card" data-reveal>
-        <h2>Private office</h2>
-        <div class="contact-action-list">
-          <a class="contact-action" href="tel:+254722414994">
-            <i class="fas fa-phone-alt"></i>
-            <span><strong>Speak to the private office</strong><small>0722 414 994</small></span>
-          </a>
-          <a class="contact-action" href="mailto:sales@elysiaolonana.com">
-            <i class="fas fa-envelope"></i>
-            <span><strong>Send a confidential email</strong><small>sales@elysiaolonana.com</small></span>
-          </a>
-          <div class="contact-action">
-            <i class="fas fa-map-marker-alt"></i>
-            <span><strong>On‑site show home</strong><small>Kyumvi, Kithini (off Machakos Road)</small></span>
-          </div>
-          <div class="contact-action">
-            <i class="fas fa-clock"></i>
-            <span><strong>Viewing hours</strong><small>Mon – Sat: 9am – 5pm<br>Sun & holidays: by appointment</small></span>
-          </div>
+  <div class="contact-cards">
+    <!-- Left Card: Contact Information -->
+    <div class="contact-info-card" data-reveal>
+      <h2>Sales & Enquiries</h2>
+      <div class="contact-action-list">
+        <a class="contact-action" href="tel:+254722414994">
+          <i class="fas fa-phone-alt"></i>
+          <span><strong>Call Sales Team</strong><small>+254 722 414 994</small></span>
+        </a>
+        <a class="contact-action" href="mailto:sales@elysiaolonana.com">
+          <i class="fas fa-envelope"></i>
+          <span><strong>Email Us</strong><small>sales@elysiaolonana.com</small></span>
+        </a>
+        <div class="contact-action">
+          <i class="fas fa-map-marker-alt"></i>
+          <span><strong>On-Site Show Home</strong><small>Kyumvi / Kithini corridor, Machakos</small></span>
         </div>
-        <a href="https://wa.me/254722414994?text=Hello%20Elysia%20Olonana%2C%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Speak on WhatsApp</a>
+        <div class="contact-action">
+          <i class="fas fa-clock"></i>
+          <span><strong>Viewing Hours</strong><small>Mon – Sat: 9am – 5pm<br>Sun & Holidays: By appointment</small></span>
+        </div>
       </div>
+      <a href="https://wa.me/254722414994" target="_blank" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
 
-      <div class="contact-form-card" data-reveal>
-        <h2>Request a viewing appointment</h2>
-        <form id="contactForm">
-          <div class="contact-form-group">
-            <label>Full name *</label>
-            <input type="text" id="contactName" name="name" required>
-          </div>
-          <div class="contact-form-group">
-            <label>Phone / WhatsApp *</label>
-            <input type="tel" id="contactPhone" name="phone" required>
-          </div>
-          <div class="contact-form-group">
-            <label>Email *</label>
-            <input type="email" id="contactEmail" name="email" required>
-          </div>
-          <div class="contact-form-group">
-            <label>Preferred viewing date</label>
-            <input type="date" id="contactDate" name="date">
-          </div>
-          <div class="contact-form-group">
-            <label>Buyer type</label>
-            <select id="contactBuyerType" name="buyerType">
-              <option value="">Select one</option>
-              <option>Owner occupier</option>
-              <option>Investor</option>
-              <option>Diaspora buyer</option>
-              <option>Agent / representative</option>
-            </select>
-          </div>
-          <div class="contact-form-group">
-            <label>Message *</label>
-            <textarea id="contactMessage" name="message" rows="4" required>I would like to schedule a private viewing of the 280 sqm residence.</textarea>
-          </div>
-          <button type="submit" class="btn filled form-submit">Request Private Viewing <i class="fas fa-arrow-right"></i></button>
-          <p class="privacy-note">Your details are used only to arrange a private viewing or buyer consultation.</p>
-        </form>
-        <div class="buyer-note">
-          <strong>For diaspora & investor buyers</strong>
-          <p>Virtual consultations, remote document review, and scheduled site representatives are available on request.</p>
+    <!-- Right Card: Booking Form -->
+    <div class="contact-form-card" data-reveal>
+      <h2>Book a Site Visit</h2>
+      <form id="contactForm">
+        <div class="contact-form-group">
+          <label>Full Name *</label>
+          <input type="text" id="contactName" name="name" required>
         </div>
+        <div class="contact-form-group">
+          <label>Phone / WhatsApp *</label>
+          <input type="tel" id="contactPhone" name="phone" required>
+        </div>
+        <div class="contact-form-group">
+          <label>Email *</label>
+          <input type="email" id="contactEmail" name="email" required>
+        </div>
+        <div class="contact-form-group">
+          <label>Preferred Viewing Date</label>
+          <input type="date" id="contactDate" name="date">
+        </div>
+        <div class="contact-form-group">
+          <label>Buyer Type</label>
+          <select id="contactBuyerType" name="buyerType">
+            <option value="">Select one</option>
+            <option>Owner occupier</option>
+            <option>Investor</option>
+            <option>Diaspora buyer</option>
+            <option>Agent / representative</option>
+          </select>
+        </div>
+        <div class="contact-form-group">
+          <label>Message *</label>
+          <textarea id="contactMessage" name="message" rows="4" required>I would like to schedule a visit to view the 280 sqm residence.</textarea>
+        </div>
+        <button type="submit" class="btn filled form-submit">Schedule My Visit <i class="fas fa-arrow-right"></i></button>
+        <p class="privacy-note">Your details are only used to coordinate your property tour.</p>
+      </form>
+      
+      <div class="buyer-note">
+        <strong>Diaspora & Investor Support</strong>
+        <p>Virtual tours, remote document signing, and dedicated video consultations are seamlessly arranged on request.</p>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
 
   <!-- What happens next -->
@@ -160,9 +165,9 @@
         <h2>What happens after you inquire?</h2>
       </div>
       <div class="steps-grid" data-reveal>
-        <div><strong>01</strong><h3>Private confirmation</h3><p>Our office confirms your preferred time and buyer requirements within 24 hours.</p></div>
+        <div><strong>01</strong><h3>Quick confirmation</h3><p>Our office confirms your preferred time and buyer requirements within 24 hours.</p></div>
         <div><strong>02</strong><h3>Site visit</h3><p>Tour the project location, layout, finishes, and surrounding access points.</p></div>
-        <div><strong>03</strong><h3>Buyer dossier</h3><p>Receive pricing, title details, payment milestones, and next steps.</p></div>
+        <div><strong>03</strong><h3>Complete info pack</h3><p>Receive pricing, title details, payment milestones, and next steps.</p></div>
       </div>
     </div>
   </section>
@@ -172,7 +177,7 @@
     <div class="container">
       <div class="map-heading" data-reveal>
         <span class="eyebrow">Project Location</span>
-        <h2>Kyumvi, Kithini project grounds</h2>
+        <h2>Kithini, Kyumvi  project grounds</h2>
         <a href="https://maps.app.goo.gl/ERCzftQ9RStiZNQw9" target="_blank">Open in Google Maps →</a>
       </div>
       <div class="map-container" data-reveal>
