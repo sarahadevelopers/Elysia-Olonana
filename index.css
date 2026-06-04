@@ -434,8 +434,8 @@
       isolation: isolate;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(20,6,31,.46), rgba(20,6,31,.94)),
-        linear-gradient(90deg, rgba(20,6,31,.92), rgba(20,6,31,.34)),
+        linear-gradient(180deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.016)),
+        linear-gradient(90deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.023)),
         url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=82") center/cover no-repeat;
     }
 
@@ -1544,8 +1544,8 @@
 .hero {
   min-height: 96svh;
   background:
-    linear-gradient(180deg, rgba(20,6,31,.34), rgba(20,6,31,.92)),
-    linear-gradient(90deg, rgba(20,6,31,.86), rgba(20,6,31,.18) 58%, rgba(20,6,31,.56)),
+    linear-gradient(180deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.285)),
+    linear-gradient(90deg, rgba(20, 6, 31, 0.21), rgba(20, 6, 31, 0.037) 58%, rgba(20,6,31,.56)),
     url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=84") center/cover no-repeat;
 }
 .hero .container { align-items: center; }
