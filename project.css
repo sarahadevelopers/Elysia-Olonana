@@ -102,7 +102,7 @@
     /* ===== CINEMATIC HERO (similar to homepage) ===== */
     .hero-project {
       min-height: 62svh; display: grid; align-items: center;
-      background: linear-gradient(180deg, rgba(20,6,31,.58), rgba(20,6,31,.94)), linear-gradient(90deg, rgba(20,6,31,.86), rgba(20,6,31,.38)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(20,6,31,.58), rgba(20,6,31,.94)), linear-gradient(90deg, rgba(20,6,31,.86), rgba(20,6,31,.38)), url('IMG_5930.webp') center/cover no-repeat;
       color: var(--white);
     }
     .hero-project .container { padding-top: 100px; padding-bottom: 40px; max-width: 800px; }

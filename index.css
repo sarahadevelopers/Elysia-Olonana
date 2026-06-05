@@ -434,8 +434,8 @@
       isolation: isolate;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.016)),
-        linear-gradient(90deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.023)),
+        linear-gradient(180deg, rgba(60, 60, 61, 0), rgba(63, 62, 63, 0.016)),
+        linear-gradient(90deg, rgba(70, 69, 70, 0), rgba(78, 77, 78, 0.023)),
         url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=82") center/cover no-repeat;
     }
 
@@ -1544,8 +1544,8 @@
 .hero {
   min-height: 96svh;
   background:
-    linear-gradient(180deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.285)),
-    linear-gradient(90deg, rgba(20, 6, 31, 0.21), rgba(20, 6, 31, 0.037) 58%, rgba(20,6,31,.56)),
+    linear-gradient(180deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0)),
+    linear-gradient(90deg, rgba(20, 6, 31, 0), rgba(20, 6, 31, 0.037) 58%, rgba(20,6,31,.56)),
     url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1900&q=84") center/cover no-repeat;
 }
 .hero .container { align-items: center; }
@@ -1553,7 +1553,7 @@
 .hero h1 { max-width: 560px; text-wrap: balance; }
 .hero p { max-width: 520px; font-size: 14px; }
 .hero-text-link {
-  display: inline-flex; align-items: center; min-height: 44px; color: var(--gold-soft);
+  display: inline-flex; align-items: center; min-height: 24px; color: var(--gold-soft);
   font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
 }
 .hero-text-link:hover { color: var(--white); }
@@ -2251,4 +2251,22 @@
   .footer-brand p {
     max-width: 100%;
   }
+}
+
+.hero .hero-actions .btn,
+.hero .hero-actions .hero-text-link {
+  min-height: 42px;           /* was 48px */
+}
+
+.hero .hero-actions .btn.filled {
+  padding: 0 20px;            /* was 26px */
+}
+
+.hero .hero-actions .btn.light {
+  padding: 0 18px;            /* was 24px */
+}
+
+.hero .hero-actions .btn,
+.hero .hero-actions .hero-text-link {
+  min-height: 38px;           /* was 46px */
 }

@@ -92,7 +92,7 @@
     /* ===== ABOUT HERO ===== */
     .about-hero {
       min-height: 60vh; display: grid; align-items: center;
-      background: linear-gradient(135deg, rgba(20,6,31,.88), rgba(20,6,31,.96)), url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(20,6,31,.88), rgba(20,6,31,.96)), url('IMG_6620.webp') center/cover no-repeat;
       color: var(--white); text-align: center;
     }
     .about-hero .container { padding-top: 110px; padding-bottom: 50px; }

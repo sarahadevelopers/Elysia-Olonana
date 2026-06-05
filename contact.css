@@ -97,7 +97,7 @@
     /* ===== CONTACT HERO (more exclusive) ===== */
     .contact-hero {
       position: relative; min-height: 42vh; display: grid; align-items: center;
-      background: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat;
+      background: url('IMG_6294.webp') center/cover no-repeat;
       color: var(--white); isolation: isolate;
     }
     .contact-hero::after {
