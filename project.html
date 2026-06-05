@@ -464,9 +464,9 @@
           <span class="eyebrow">Full home details</span>
           <h2>Key specifications</h2>
         </div>
-        <p>
+        <!--  <p>
           A quick desktop view of the main details. On mobile, buyers can open the full specs in a clean modal.
-        </p>
+        </p>-->
       </div>
 
       <div class="premium-specs-list">
@@ -573,7 +573,7 @@
   <div class="floorplan-preview-frame">
     <img 
       id="floorplanImg" 
-      src="https://placehold.co/800x500/14061f/e3bc6c?text=Ground+Floor+Plan" 
+      src="IMG_2026-06-05T134613.772.webp" 
       alt="Ground floor plan"
     >
   </div>
@@ -721,11 +721,11 @@
       type="button"
       style="background-image: url('IMG_6251.webp');"
       data-gallery-img="IMG_6251.webp"
-      data-gallery-title="corridors"
-      aria-label="Open corridors image"
+      data-gallery-title="foyer"
+      aria-label="Open foyer image"
     >
       <span class="gallery-count">09</span>
-      <span class="gallery-label">corridors</span>
+      <span class="gallery-label">foyer</span>
     </button>
 
      <button
@@ -1058,8 +1058,16 @@
   <div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Request info</span><h2>Book a viewing or get the brochure</h2><form class="form-grid" id="leadForm"><div class="field"><label>Full name *</label><input id="name" name="name" type="text" required /></div><div class="field"><label>Phone / WhatsApp *</label><input id="phone" name="phone" type="tel" required /></div><div class="field"><label>Email *</label><input id="email" name="email" type="email" required /></div><div class="field"><label>Buyer type</label><select id="buyerType" name="buyerType"><option>Homeowner</option><option>Investor</option><option>Diaspora buyer</option><option>Agent</option></select></div><div class="field"><label>Preferred viewing date (optional)</label><input id="date" name="date" type="date" /></div><div class="field"><label>Message</label><textarea id="message" rows="3">I would like to receive the brochure and schedule a site viewing for the 280 sqm residence.</textarea></div><button class="btn filled" type="submit">Send request</button><p class="form-note" id="formNote"></p></form></div></div>
 </div>
 <div class="modal" id="detailsModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Quick details</span><h2>Residence summary</h2><ul><li>Price: KSh 23,000,000</li><li>280 sqm, 4 en‑suite bedrooms</li><li>DSQ + utility wing</li><li>Flat‑roof terrace potential</li><li>Freehold title, turnkey delivery</li></ul></div></div></div>
-<div class="modal" id="floorModal" role="dialog"><div class="modal-dialog"><button class="modal-close" data-close-modal>&times;</button><div class="modal-body"><span class="eyebrow">Floor plans</span><h2>All layouts</h2><img src="https://placehold.co/800x500/14061f/e3bc6c?text=Detailed+Floor+Plan" alt="Floor plan" style="width:100%; margin-top: 16px;"></div></div></div>
-<div class="modal" id="specsModal" role="dialog" aria-modal="true" aria-hidden="true">
+<div class="modal" id="floorModal" role="dialog">
+  <div class="modal-dialog">
+    <button class="modal-close" data-close-modal>&times;</button>
+    <div class="modal-body">
+      <span class="eyebrow">Floor plans</span>
+      <h2>All layouts</h2>
+      <img id="modalFloorplanImg" src="ground-floor-plan.webp" alt="Floor plan" style="width:100%; margin-top: 16px;">
+    </div>
+  </div>
+</div><div class="modal" id="specsModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-dialog specs-modal-dialog">
     <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
 
@@ -1134,7 +1142,7 @@
         <div class="specs-modal-item">
           <span>Title</span>
           <strong>Freehold</strong>
-          <small>Individual title</small>
+          <small>Ready Individual titles</small>
         </div>
 
         <div class="specs-modal-item">
@@ -1160,8 +1168,7 @@
 <script src="project.js"></script>
 
 <script>
-/* ===== SPECS MODAL BUTTON FIX =====
-   Keeps modal buttons working even when one modal opens another. */
+/* ===== SPECS MODAL BUTTON FIX ===== */
 (function () {
   function closeAnyOpenModals() {
     document.querySelectorAll(".modal.open").forEach(function (modal) {
@@ -1214,6 +1221,61 @@
     }, 80);
   }, true);
 })();
+
+// ===== FLOORPLAN TABS (with modal image update) =====
+const floorplanImages = {
+  ground: "IMG_2026-06-05T134613.772.webp",
+  first: "IMG_2026-06-05T134815.120.webp",
+  roof: "IMG_1000794523.webp",
+  compound: "IMG_1000794502.webp"
+};
+
+const floorplanDesc = {
+  ground: "Ground floor: open living/dining, guest bedroom, utility wing, separate DSQ entrance.",
+  first: "First floor: three en-suite bedrooms, family lounge, access to rooftop terrace.",
+  roof: "Rooftop terrace: 130 sqm, engineered for outdoor lounge, garden, or entertainment.",
+  compound: "Compound layout: secure parking, landscaping, perimeter wall, and service access."
+};
+
+// Get elements
+const tabBtns = document.querySelectorAll(".tab-btn");
+const mainFloorplanImg = document.getElementById("floorplanImg");
+const floorplanDescEl = document.getElementById("floorplanDesc");
+const modalFloorplanImg = document.getElementById("modalFloorplanImg");
+
+// Function to update both main and modal images
+function updateFloorplan(plan) {
+  if (mainFloorplanImg && floorplanImages[plan]) {
+    mainFloorplanImg.src = floorplanImages[plan];
+  }
+  if (floorplanDescEl && floorplanDesc[plan]) {
+    floorplanDescEl.innerText = floorplanDesc[plan];
+  }
+  if (modalFloorplanImg && floorplanImages[plan]) {
+    modalFloorplanImg.src = floorplanImages[plan];
+  }
+}
+
+// Add click event to each tab
+tabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const plan = btn.dataset.plan;
+    if (!plan) return;
+    updateFloorplan(plan);
+    // Update active class
+    tabBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+// Initialize with the active tab (ground)
+const activeTab = document.querySelector(".tab-btn.active");
+if (activeTab && activeTab.dataset.plan) {
+  updateFloorplan(activeTab.dataset.plan);
+} else {
+  // fallback
+  updateFloorplan("ground");
+}
 </script>
 
 </body>
