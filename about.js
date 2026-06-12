@@ -45,9 +45,9 @@
     // Team modals
     const teamData = {
       founder: {
-        name: "Njuguna",
+        name: "William",
         role: "Founder & CEO",
-        bio: "Njuguna leads the vision behind Elysia Olonana. His focus is on quality homes, clear communication, and creating long-term value for families and investors."
+        bio: "William leads the vision behind Elysia Olonana. His focus is on quality homes, clear communication, and creating long-term value for families and investors."
       },
       design: {
         name: "Njuguna",
@@ -55,9 +55,9 @@
         bio: "Njuguna guides the design direction of each home, making sure the spaces feel calm, modern, practical, and comfortable for daily family living."
       },
       projects: {
-        name: "Njuguna",
+        name: "Josephat",
         role: "Project Manager",
-        bio: "Njuguna oversees construction, timelines, site coordination, and quality checks to make sure each home is delivered with care."
+        bio: "Josephat oversees construction, timelines, site coordination, and quality checks to make sure each home is delivered with care."
       }
     };
 
