@@ -2270,3 +2270,62 @@
 .hero .hero-actions .hero-text-link {
   min-height: 38px;           /* was 46px */
 }
+
+/* Video card styling */
+.video-card {
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple-soft));
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 0;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-deep);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  padding: 28px 24px;
+  text-align: center;
+  color: var(--white);
+}
+
+.video-caption h3 {
+  color: var(--gold-soft);
+  margin: 12px 0 8px;
+  font-size: 22px;
+}
+
+.video-caption p {
+  color: var(--muted-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 620px) {
+  .video-caption {
+    padding: 20px 16px;
+  }
+  .video-caption h3 {
+    font-size: 18px;
+  }
+}

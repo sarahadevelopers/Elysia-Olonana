@@ -457,3 +457,52 @@
 .blog-cta .btn.filled {
   color: var(--purple-deep) !important;
 }
+
+/* Video card styling for blog posts */
+.blog-cta .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.blog-cta .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.blog-cta .video-caption {
+  text-align: center;
+  padding: 16px 0 0;
+}
+
+.blog-cta .video-caption i {
+  margin-bottom: 12px;
+}
+
+.blog-cta .video-caption h3 {
+  color: var(--purple-deep);
+  font-family: var(--serif);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.blog-cta .video-caption p {
+  color: var(--muted-dark);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+@media (max-width: 620px) {
+  .blog-cta .video-caption h3 {
+    font-size: 20px;
+  }
+}
